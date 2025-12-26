@@ -42,4 +42,15 @@ class ParserTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_BLANK);
     }
+
+    @Test
+    @DisplayName("커스텀구분자가 규칙을 따르지 않았을 때")
+    void 커스텀구분자_규칙_준수() {
+        String input = "//;\\\n1;2;3";
+        Parser parser = new Parser(input);
+
+        assertThatThrownBy(parser::parseInput)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_CHECK_CUSTOM_RULE);
+    }
 }
