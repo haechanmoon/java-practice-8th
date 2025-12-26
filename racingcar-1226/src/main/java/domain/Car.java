@@ -17,5 +17,10 @@ public class Car {
         }
     }
 
+    public String currentPosition() {
+        return name + " : "
+                + "-".repeat(Math.max(0, position));
+    }
+
 
 }
