@@ -2,7 +2,7 @@ package domain;
 
 public class Car {
 
-    private static int RANDOM_NUMBER;
+    private static final int STANDARD_NUMBER = 4;
     private final String name;
     private int position;
 
@@ -12,7 +12,7 @@ public class Car {
     }
 
     public void go(int num) {
-        if (num >= RANDOM_NUMBER) {
+        if (num >= STANDARD_NUMBER) {
             position++;
         }
     }
