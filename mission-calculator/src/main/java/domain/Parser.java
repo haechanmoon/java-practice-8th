@@ -30,7 +30,7 @@ public class Parser {
     }
 
     private void extracted(String changed, String delimiter, List<Integer> numbers) {
-        for (String val : changed.split(delimiter)) {
+        for (String val : changed.trim().split(delimiter)) {
             Validator.validateIsEmpty(val);
             Validator.validateIsDigit(val);
             numbers.add(Integer.parseInt(val));
