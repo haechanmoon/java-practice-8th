@@ -12,16 +12,10 @@ public class Calculator {
 
     public int sum() {
         int result = 0;
-        result = getResult(result);
-        return result;
-    }
-
-    private int getResult(int result) {
         for (Integer val : numbers) {
             result += val;
         }
         return result;
     }
-
 
 }
