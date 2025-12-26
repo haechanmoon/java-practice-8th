@@ -22,4 +22,22 @@ class CarTest {
         assertThat(pobi.getPosition()).isEqualTo(3);
     }
 
+    @Test
+    @DisplayName("위치 출력 기능 확인")
+    void 위치_출력_기능() {
+        Car pobi = new Car("pobi");
+        Car lexi = new Car("lexi");
+
+        pobi.go(4);
+        pobi.go(4);
+        pobi.go(4);
+
+        lexi.go(2);
+        lexi.go(2);
+        lexi.go(4);
+
+        assertThat(pobi.currentPosition()).isEqualTo("pobi : ---");
+        assertThat(lexi.currentPosition()).isEqualTo("lexi : -");
+    }
+
 }
