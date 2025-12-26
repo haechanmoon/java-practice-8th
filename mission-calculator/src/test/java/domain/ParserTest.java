@@ -32,4 +32,14 @@ class ParserTest {
                 .hasMessageContaining(Messages.ERROR_IS_BLANK);
     }
 
+    @Test
+    @DisplayName("숫자가 빈 값일 때")
+    void 숫자가_빈_값일_때() {
+        String input = "1,,2,3,4,5";
+        Parser parser = new Parser(input);
+
+        assertThatThrownBy(parser::parseInput)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_BLANK);
+    }
 }
