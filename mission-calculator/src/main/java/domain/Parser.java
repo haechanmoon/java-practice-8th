@@ -9,7 +9,7 @@ public class Parser {
     private final String input;
 
     public Parser(String input) {
-        Validator.validatIsEmpty(input);
+        Validator.validateIsEmpty(input);
         this.input = input;
     }
 
@@ -31,6 +31,7 @@ public class Parser {
 
     private void extracted(String changed, String delimiter, List<Integer> numbers) {
         for (String val : changed.split(delimiter)) {
+            Validator.validateIsEmpty(val);
             Validator.validateIsDigit(val);
             numbers.add(Integer.parseInt(val));
         }

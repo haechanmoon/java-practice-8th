@@ -9,7 +9,7 @@ public class Validator {
         }
     }
 
-    public static void validatIsEmpty(String input) {
+    public static void validateIsEmpty(String input) {
         if (input.isBlank()) {
             throw new IllegalArgumentException(Messages.ERROR_IS_BLANK);
         }
