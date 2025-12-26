@@ -9,7 +9,7 @@ public class Parser {
     private final String input;
 
     public Parser(String input) {
-        //Validator.validateIsDigit(input);
+        Validator.validatIsEmpty(input);
         this.input = input;
     }
 

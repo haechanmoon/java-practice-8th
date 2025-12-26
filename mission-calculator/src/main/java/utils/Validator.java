@@ -8,4 +8,10 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_DIGIT);
         }
     }
+
+    public static void validatIsEmpty(String input) {
+        if (input.isBlank()) {
+            throw new IllegalArgumentException(Messages.ERROR_IS_BLANK);
+        }
+    }
 }
