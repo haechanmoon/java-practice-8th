@@ -1,7 +1,9 @@
 package domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -52,5 +54,19 @@ class ParserTest {
         assertThatThrownBy(parser::parseInput)
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_CHECK_CUSTOM_RULE);
+    }
+
+    @Test
+    @DisplayName("문자열이 잘 쪼개지는지 확인")
+    void 문자열이_잘_쪼개지는지_확인() {
+        //given
+        String input = "//;\\n1;2;3;4;5";
+        Parser parser = new Parser(input);
+
+        //when
+        List<Integer> numbers = parser.parseInput();
+
+        //then
+        assertThat(numbers).isEqualTo(List.of(1, 2, 3, 4, 5));
     }
 }
