@@ -3,6 +3,7 @@ package domain;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import utils.Messages;
@@ -18,6 +19,17 @@ class ParserTest {
         assertThatThrownBy(parser::parseInput)
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_DIGIT);
-        
+
     }
+
+    @Test
+    @DisplayName("입력값이 빈 값일 때")
+    void 입력값이_빈_값일_때() {
+        String input = "";
+
+        assertThatThrownBy(() -> new Parser(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_BLANK);
+    }
+
 }
