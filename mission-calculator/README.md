@@ -1,6 +1,6 @@
 # java-calculator-precourse
 
-version : 1.1
+version : 1.2
 
 ## 기능 구현 리스트
 
