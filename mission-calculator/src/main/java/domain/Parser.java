@@ -16,6 +16,7 @@ public class Parser {
     public List<Integer> parseInput() {
         List<Integer> numbers = new ArrayList<>();
         if (input.startsWith("//")) {
+            Validator.validateCustom(input);
             return getIntegers(numbers);
         }
         extracted(input, "[,:]", numbers);
@@ -24,7 +25,7 @@ public class Parser {
 
     private List<Integer> getIntegers(List<Integer> numbers) {
         String delimiter = input.substring(2, 3);
-        String changed = input.substring(input.indexOf(delimiter) + 3);
+        String changed = input.substring(input.indexOf("\\n") + 2);
         extracted(changed, delimiter, numbers);
         return numbers;
     }

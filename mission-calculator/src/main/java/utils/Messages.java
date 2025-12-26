@@ -5,4 +5,5 @@ public class Messages {
     public static final String ERROR_IS_NOT_DIGIT = "[ERROR] 숫자가 아닌 문자가 삽입되었습니다";
     public static final String ERROR_IS_BLANK = "[ERROR] 값을 입력해주세요";
     public static final String PRINT_RESULT = "결과 : %d";
+    public static final String ERROR_CHECK_CUSTOM_RULE = "[ERROR] 커스텀문자 생성 규칙을 확인하세요";
 }
