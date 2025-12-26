@@ -35,7 +35,7 @@ public class Cars {
         return count;
     }
 
-    public String getWinnerList() {
+    public String writeWinners() {
         return String.join(", ", getWinners());
     }
 
