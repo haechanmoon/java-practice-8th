@@ -33,7 +33,7 @@ version : 3.7
 - [x] (검증) 시도할 횟수가 숫자형태인지 확인
 - [x] 시도할 횟수 받아서 Cars에 랜덤값 주입 후 전진
 - [x] 실행결과를 OutputView에 넘겨줄 수 있게 만듦
-- [ ] 최종 우승자 String으로 만듦
+- [x] 최종 우승자 String으로 만듦
 
 #### Controller
 
