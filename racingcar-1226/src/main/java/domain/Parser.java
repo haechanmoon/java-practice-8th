@@ -19,6 +19,7 @@ public class Parser {
             Validator.validateLength(name.trim());
             names.add(name.trim());
         }
+        Validator.validateNameDuplicated(names);
         return names;
     }
 }
