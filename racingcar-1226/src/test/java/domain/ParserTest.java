@@ -40,4 +40,15 @@ class ParserTest {
                 .hasMessageContaining(Messages.ERROR_NAME_LENGTH);
     }
 
+    @Test
+    @DisplayName("(예외) 이름 중복")
+    void 이름_중복() {
+        String input = "pobi, pobi, hong,woong";
+        Parser parser = new Parser(input);
+
+        assertThatThrownBy(parser::splitInput)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_NAME_DUPLICATED);
+    }
+
 }
