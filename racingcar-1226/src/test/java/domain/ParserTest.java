@@ -29,4 +29,15 @@ class ParserTest {
                 .hasMessageContaining(Messages.ERROR_IS_BLANK);
     }
 
+    @Test
+    @DisplayName("(예외) 이름이 6자 이상일 때")
+    void 이름이_6자_이상일_때() {
+        String input = "pobi,assertJ,hongjun";
+        Parser parser = new Parser(input);
+
+        assertThatThrownBy(parser::splitInput)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_NAME_LENGTH);
+    }
+
 }
