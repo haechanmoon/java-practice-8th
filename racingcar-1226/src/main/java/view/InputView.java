@@ -8,4 +8,7 @@ public class InputView {
     }
 
 
+    public static String getTurns() {
+        return Console.readLine();
+    }
 }

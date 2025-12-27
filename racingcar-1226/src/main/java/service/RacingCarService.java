@@ -20,7 +20,7 @@ public class RacingCarService {
         this.turns = Integer.parseInt(turns);
     }
 
-    public Cars generateCars() {
+    private Cars generateCars() {
         Parser parser = new Parser(names);
         List<Car> cars = new ArrayList<>();
         for (String name : parser.splitInput()) {
@@ -30,7 +30,8 @@ public class RacingCarService {
         return new Cars(cars);
     }
 
-    public String run(Cars cars) {
+    public String run() {
+        Cars cars = generateCars();
         RandomGenerator random = new RandomGenerator();
         return cars.runTurns(turns, random);
     }
