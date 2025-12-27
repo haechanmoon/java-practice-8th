@@ -1,6 +1,6 @@
 # java-racingcar-precourse
 
-version : 3.3
+version : 3.4
 
 ## 기능 구현 리스트
 
@@ -48,6 +48,7 @@ version : 3.3
 
 - **Cars**
 - [x] : 우승자 구하기
+- [ ] : 자동차들 N회 움직임시 위치 확인
 
 - **Parser**
 - [x] : 자동차 이름 분리 확인
