@@ -31,7 +31,11 @@ public class RacingCarService {
 
     public String run(Cars cars) {
         RandomGenerator random = new RandomGenerator();
-        cars.runTurns(turns, random);
+        return cars.runTurns(turns, random);
+    }
+
+    public String getWinner(Cars cars) {
+        return cars.writeWinners();
     }
 
 }
