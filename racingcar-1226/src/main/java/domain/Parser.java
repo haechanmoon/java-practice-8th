@@ -11,10 +11,10 @@ public class Parser {
         this.input = input;
     }
 
-    public List<String> parseInput() {
+    public List<String> splitInput() {
         List<String> names = new ArrayList<>();
         for (String name : input.split(",")) {
-            names.add(name);
+            names.add(name.trim());
         }
         return names;
     }
