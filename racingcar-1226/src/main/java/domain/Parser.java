@@ -16,6 +16,7 @@ public class Parser {
     public List<String> splitInput() {
         List<String> names = new ArrayList<>();
         for (String name : input.split(",")) {
+            Validator.validateLength(name.trim());
             names.add(name.trim());
         }
         return names;
