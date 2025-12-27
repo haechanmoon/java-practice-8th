@@ -15,6 +15,7 @@ public class RacingCarService {
 
     public RacingCarService(String names, String turns) {
         this.names = names;
+        Validator.validateIsBlank(turns);
         Validator.validateIsDigit(turns);
         this.turns = Integer.parseInt(turns);
     }
