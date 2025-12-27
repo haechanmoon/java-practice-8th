@@ -51,4 +51,15 @@ class ParserTest {
                 .hasMessageContaining(Messages.ERROR_NAME_DUPLICATED);
     }
 
+    @Test
+    @DisplayName("(예외) 이름이 빈값일 시")
+    void 이름이_빈값일_시() {
+        String input = "pobi, , hong, woong";
+        Parser parser = new Parser(input);
+
+        assertThatThrownBy(parser::splitInput)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_BLANK);
+    }
+
 }
