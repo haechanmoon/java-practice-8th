@@ -8,5 +8,6 @@ public class RacingCarGame {
     public void start() {
         OutputView.requestNames();
         String names = InputView.getNames();
+        OutputView.requestTurns();
     }
 }
