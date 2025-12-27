@@ -1,6 +1,6 @@
 # java-racingcar-precourse
 
-version : 3.5
+version : 3.6
 
 ## 기능 구현 리스트
 
@@ -29,6 +29,7 @@ version : 3.5
 #### Service
 
 - [x] Car에 이름 주입후 Cars 생성
+- [ ] (검증) 시도할 횟수가 숫자형태인지 확인
 - [x] 시도할 횟수 받아서 Cars에 랜덤값 주입 후 전진
 - [x] 실행결과를 OutputView에 넘겨줄 수 있게 만듦
 - [ ] 최종 우승자 String으로 만듦
