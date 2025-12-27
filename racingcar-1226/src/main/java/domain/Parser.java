@@ -2,12 +2,14 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import utils.Validator;
 
 public class Parser {
 
     private final String input;
 
     public Parser(String input) {
+        Validator.validateIsBlank(input);
         this.input = input;
     }
 
