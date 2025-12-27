@@ -26,4 +26,9 @@ public class Validator {
     }
 
 
+    public static void validateIsDigit(String turns) {
+        if (!turns.matches("\\d+")) {
+            throw new IllegalArgumentException(Messages.ERROR_IS_NOT_DIGIT);
+        }
+    }
 }
