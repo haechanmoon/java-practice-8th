@@ -33,10 +33,10 @@ public class RacingCarService {
     public String run() {
         Cars cars = generateCars();
         RandomGenerator random = new RandomGenerator();
-        return cars.runTurns(turns, random);
+        return cars.runTurns(turns, random) + ("\n") + getWinner(cars);
     }
 
-    public String getWinner(Cars cars) {
+    private String getWinner(Cars cars) {
         return cars.writeWinners();
     }
 
