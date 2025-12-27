@@ -13,7 +13,7 @@ public class Validator {
     }
 
     public static void validateLength(String name) {
-        if (name.length() < SIZE_STANDARD) {
+        if (name.length() > SIZE_STANDARD) {
             throw new IllegalArgumentException(Messages.ERROR_NAME_LENGTH);
         }
     }
