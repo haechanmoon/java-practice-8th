@@ -26,4 +26,25 @@ class CarsTest {
         Cars cars = new Cars(carNames);
         assertThat(cars.writeWinners()).isEqualTo("pobi");
     }
+
+    @Test
+    @DisplayName("자동차들 N회 움직임시 위치 확인")
+    void 자동차들_N회_움직임시_위치_확인() {
+        Car pobi = new Car("pobi");
+        Car navi = new Car("navi");
+        List<Car> carTest = List.of(pobi, navi);
+        Cars cars = new Cars(carTest);
+
+        RandomGenerator generator = new RandomGenerator() {
+            @Override
+            public int generateRandom() {
+                return 4;
+            }
+        };
+
+        cars.runTurns(5, generator);
+
+        assertThat(pobi.getPosition()).isEqualTo(5);
+        assertThat(navi.getPosition()).isEqualTo(5);
+    }
 }
