@@ -25,7 +25,7 @@ version : 3.2
 - [x] (검증) 이름이 빈값은 없는지
 
 - **RandomGenerator**
-- [ ] 랜덤값 클래스 생성
+- [x] 랜덤값 클래스 생성
 
 #### Service
 
