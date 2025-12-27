@@ -41,17 +41,16 @@ public class Cars {
         return String.join(", ", getWinners());
     }
 
-    private void goCars() {
-        RandomGenerator generator = new RandomGenerator();
+    private void goCars(RandomGenerator generator) {
         for (Car car : cars) {
             car.go(generator.generateRandom());
         }
     }
 
-    public Map<Car, Integer> runTurns(int turns) {
+    public Map<Car, Integer> runTurns(int turns, RandomGenerator generator) {
         Map<Car, Integer> position = new HashMap<>();
         for (int i = 0; i < turns; i++) {
-            goCars();
+            goCars(generator);
             for (Car car : cars) {
                 position.put(car, car.getPosition());
             }
@@ -59,12 +58,12 @@ public class Cars {
         return position;
     }
 
-    public String printResult() {
+    public String writeResult() {
         StringBuilder resultBoard = new StringBuilder();
         for (Car car : cars) {
             resultBoard.append(car.currentPosition()).append("\n");
         }
         return resultBoard.toString();
     }
-
+    
 }
