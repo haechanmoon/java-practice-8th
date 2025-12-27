@@ -8,4 +8,5 @@ public class Messages {
     public static final String REQUEST_TURNS = "시도할 횟수는 몇 회인가요?";
     public static final String ERROR_IS_NOT_DIGIT = "[ERROR] 숫자가 아닌 값은 입력할 수 없습니다.";
     public static final String PRINT_LETTER_RESULT = "실행 결과";
+    public static final String PRINTWINNER = "최종 우승자 : ";
 }

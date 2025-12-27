@@ -6,6 +6,7 @@ import domain.Parser;
 import domain.RandomGenerator;
 import java.util.ArrayList;
 import java.util.List;
+import utils.Messages;
 import utils.Validator;
 
 public class RacingCarService {
@@ -33,10 +34,10 @@ public class RacingCarService {
     public String run() {
         Cars cars = generateCars();
         RandomGenerator random = new RandomGenerator();
-        return cars.runTurns(turns, random) + ("\n") + getWinner(cars);
+        return cars.runTurns(turns, random) + Messages.PRINTWINNER + getWinners(cars);
     }
 
-    private String getWinner(Cars cars) {
+    private String getWinners(Cars cars) {
         return cars.writeWinners();
     }
 
