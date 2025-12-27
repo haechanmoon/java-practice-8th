@@ -29,8 +29,8 @@ version : 3.5
 #### Service
 
 - [x] Car에 이름 주입후 Cars 생성
-- [ ] 시도할 횟수 받아서 Cars에 랜덤값 주입 후 전진
-- [ ] 실행결과를 OutputView에 넘겨줄 수 있게 만듦
+- [x] 시도할 횟수 받아서 Cars에 랜덤값 주입 후 전진
+- [x] 실행결과를 OutputView에 넘겨줄 수 있게 만듦
 - [ ] 최종 우승자 String으로 만듦
 
 #### Controller

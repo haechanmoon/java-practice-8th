@@ -1,9 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Cars {
     private final List<Car> cars;
@@ -47,23 +45,21 @@ public class Cars {
         }
     }
 
-    public Map<Car, Integer> runTurns(int turns, RandomGenerator generator) {
-        Map<Car, Integer> position = new HashMap<>();
+    public String runTurns(int turns, RandomGenerator generator) {
+        StringBuilder board = new StringBuilder();
         for (int i = 0; i < turns; i++) {
             goCars(generator);
-            for (Car car : cars) {
-                position.put(car, car.getPosition());
-            }
+            board.append(writeResult()).append("\n");
         }
-        return position;
+        return board.toString();
     }
 
-    public String writeResult() {
+    private String writeResult() {
         StringBuilder resultBoard = new StringBuilder();
         for (Car car : cars) {
             resultBoard.append(car.currentPosition()).append("\n");
         }
         return resultBoard.toString();
     }
-    
+
 }
