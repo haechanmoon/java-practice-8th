@@ -6,6 +6,7 @@ import domain.Parser;
 import domain.RandomGenerator;
 import java.util.ArrayList;
 import java.util.List;
+import utils.Validator;
 
 public class LottoService {
 
@@ -15,11 +16,13 @@ public class LottoService {
 
     public LottoService(String money, String winningNumbers, String bonusNumber) {
         this.money = Parser.getNumber(money);
+        Validator.validateMoneyUnit(this.money);
         this.winningNumbers = Parser.getWinningNumbers(winningNumbers);
         this.bonusNumber = Parser.getNumber(bonusNumber);
     }
 
     private int lottoCount() {
+        ;
         return money / 1000;
     }
 
