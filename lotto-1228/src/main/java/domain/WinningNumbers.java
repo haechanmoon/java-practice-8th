@@ -27,7 +27,7 @@ public class WinningNumbers {
         }
         for (Lotto lotto : lottos.getLottos()) {
             Rank rank = Rank.valueOf(lotto, winNums, bonus);
-            result.put(rank, result.get(rank) + 1);
+            result.put(rank, result.getOrDefault(rank, 0) + 1);
         }
         return result;
     }

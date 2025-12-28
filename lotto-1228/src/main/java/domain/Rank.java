@@ -26,10 +26,13 @@ public enum Rank {
         }
 
         for (Rank rank : Rank.values()) {
-            if (lotto.hasBonus(bonus)) {
-                return SECOND;
-            }
             if (rank.matchCount == lotto.matchCount(winNum) && rank.matchCount == 5) {
+                if (lotto.hasBonus(bonus)) {
+                    return SECOND;
+                }
+                return THIRD;
+            }
+            if (rank.matchCount == lotto.matchCount(winNum)) {
                 return rank;
             }
         }
