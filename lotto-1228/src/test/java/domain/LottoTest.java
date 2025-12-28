@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import utils.Messages;
 
 class LottoTest {
     @Test
@@ -57,5 +58,15 @@ class LottoTest {
         Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
 
         assertThat(lotto.hasBonus(bonus)).isEqualTo(expected);
+    }
+
+    @Test
+    @DisplayName("(예외) 로또 숫자가 6개가 아닐 때")
+    void 로또_숫자가_6개가_아닐_때() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+
+        assertThatThrownBy(() -> new Lotto(numbers))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_NOT_SIZE);
     }
 }
