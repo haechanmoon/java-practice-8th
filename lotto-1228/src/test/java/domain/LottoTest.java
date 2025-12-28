@@ -79,4 +79,12 @@ class LottoTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_RANGE_OUT);
     }
+
+    @Test
+    @DisplayName("(예외) 중복된 숫자가 있을 때")
+    void 중복된_숫자가_있을_때() {
+        assertThatThrownBy(() -> new Lotto(List.of(1, 2, 3, 4, 4, 5)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_NUMBER_DUPLICATED);
+    }
 }
