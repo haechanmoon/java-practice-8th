@@ -32,4 +32,13 @@ class LottoTest {
                 .isEqualTo(3);
     }
 
+    @Test
+    @DisplayName("로또 번호를 오름차순으로 바꾸기")
+    void 로또_번호를_오름차순으로_바꾸기() {
+        List<Integer> numbers = List.of(1, 2, 3, 5, 6, 8);
+        Lotto lotto = new Lotto(numbers);
+
+        assertThat(lotto.toString()).isEqualTo("[1, 2, 3, 5, 6, 8]");
+    }
+
 }
