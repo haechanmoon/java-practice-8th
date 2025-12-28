@@ -61,5 +61,12 @@ public enum Rank {
     public int getPrizeMoney() {
         return prizeMoney;
     }
-    
+
+    public String getString() {
+        if (this == SECOND) {
+            return String.format(("%d개 일치, 보너스 볼 일치(%,d원)"), matchCount, prizeMoney);
+        }
+        return String.format(("%d개 일치, (%,d원)"), matchCount, prizeMoney);
+    }
+
 }
