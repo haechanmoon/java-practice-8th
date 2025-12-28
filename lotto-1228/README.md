@@ -2,7 +2,7 @@
 
 > 1등을 잡아라! 로또 입니다. 금액을 입력한 후 , 당첨번호/보너스번호를 입력하면 당첨된 결과와 함께 수익률이 출력됩니다.
 
-version = 1.4 : WinningPrize domain 추가
+version = 1.5 : WinningPrize domain test 추가
 
 ## 기능 구현 List
 
@@ -81,3 +81,6 @@ version = 1.4 : WinningPrize domain 추가
 
 - **Rank**
 - [ ] 번호와 맞는 등수 확인
+
+- **WinningPrize**
+- [ ] 수익률 계산 확인
