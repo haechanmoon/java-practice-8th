@@ -6,6 +6,7 @@ import domain.Parser;
 import domain.RandomGenerator;
 import domain.Rank;
 import domain.WinningNumbers;
+import domain.WinningPrize;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -47,5 +48,8 @@ public class LottoService {
         return winNums.mapping(generateLottos(), bonusNumber);
     }
 
-   
+    public double resultRatio() {
+        WinningPrize prize = new WinningPrize(getMap());
+        return prize.prizeRatio(money);
+    }
 }
