@@ -6,6 +6,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class LottoTest {
     @Test
@@ -41,4 +43,19 @@ class LottoTest {
         assertThat(lotto.toString()).isEqualTo("[1, 2, 3, 5, 6, 8]");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"1", "2", "3", "4"})
+    @DisplayName("보너스 번호가 있는지 판단")
+    void 보너스_번호가_있는지_판단(int bonus) {
+        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+        assertThat(lotto.hasBonus(bonus)).isEqualTo(true);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"7", "8", "9", "10"})
+    @DisplayName("보너스 번호가 있는지 판단")
+    void 보너스_번호가_없는지_판단(int bonus) {
+        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+        assertThat(lotto.hasBonus(bonus)).isEqualTo(false);
+    }
 }
