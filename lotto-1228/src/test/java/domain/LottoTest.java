@@ -69,4 +69,14 @@ class LottoTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_SIZE);
     }
+
+    @Test
+    @DisplayName("(예외) 숫자 범위가 1-45가 아닐 때")
+    void 숫자_범위가_1부터45가_아닐_때() {
+        List<Integer> numbers = List.of(1, 2, 3, 46, 4, 5);
+
+        assertThatThrownBy(() -> new Lotto(numbers))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_RANGE_OUT);
+    }
 }
