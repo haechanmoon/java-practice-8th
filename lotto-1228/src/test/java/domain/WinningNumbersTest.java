@@ -54,4 +54,16 @@ class WinningNumbersTest {
                 .hasMessageContaining(Messages.ERROR_NUMBER_DUPLICATED);
     }
 
+    @Test
+    @DisplayName("(예외) 보너스 번호가 중복될 때")
+    void 보너스_값이_겹칠_때() {
+        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+        WinningNumbers winNums = new WinningNumbers(List.of(1, 2, 3, 4, 5, 6));
+        int bonus = 6;
+
+        assertThatThrownBy(() -> winNums.matchBonus(lotto, bonus))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_ALREADY_BONUS);
+    }
+
 }
