@@ -10,4 +10,11 @@ public class Validator {
         }
     }
 
+    public static void validateRange(List<Integer> numbers) {
+        for (Integer val : numbers) {
+            if (val > 45 || val < 1) {
+                throw new IllegalArgumentException(Messages.ERROR_RANGE_OUT);
+            }
+        }
+    }
 }
