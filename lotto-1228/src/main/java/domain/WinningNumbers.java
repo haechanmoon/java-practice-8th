@@ -1,6 +1,8 @@
 package domain;
 
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 public class WinningNumbers {
 
@@ -16,5 +18,17 @@ public class WinningNumbers {
 
     public boolean matchBonus(Lotto lotto, int bonus) {
         return lotto.hasBonus(bonus);
+    }
+
+    public Map<Rank, Integer> mapping(Lottos lottos, int bonus) {
+        Map<Rank, Integer> result = new EnumMap<>(Rank.class);
+        for (Rank rank : Rank.values()) {
+            result.getOrDefault(rank, 0);
+        }
+        for (Lotto lotto : lottos.getLottos()) {
+            Rank rank = Rank.valueOf(lotto, winNums, bonus);
+            result.put(rank, result.get(rank) + 1);
+        }
+        return result;
     }
 }

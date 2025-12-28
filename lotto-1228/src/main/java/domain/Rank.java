@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.List;
+
 public enum Rank {
 
     MISS(0, 0),
@@ -18,16 +20,16 @@ public enum Rank {
         this.prizeMoney = prizeMoney;
     }
 
-    public Rank valueOf(Lotto lotto, WinningNumbers winNums, int bonus) {
-        if (winNums.matchCount(lotto) < FAIL_NUM) {
+    public static Rank valueOf(Lotto lotto, List<Integer> winNum, int bonus) {
+        if (lotto.matchCount(winNum) < FAIL_NUM) {
             return MISS;
         }
 
         for (Rank rank : Rank.values()) {
-            if (rank.matchCount == winNums.matchCount(lotto) && rank.matchCount == 5) {
-                if (winNums.matchBonus(lotto, bonus)) {
-                    return SECOND;
-                }
+            if (lotto.hasBonus(bonus)) {
+                return SECOND;
+            }
+            if (rank.matchCount == lotto.matchCount(winNum) && rank.matchCount == 5) {
                 return rank;
             }
         }
