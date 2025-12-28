@@ -11,6 +11,7 @@ public class WinningNumbers {
 
     public WinningNumbers(List<Integer> winNums) {
         Validator.validateCount(winNums);
+        Validator.validateRange(winNums);
         this.winNums = winNums;
     }
 
