@@ -79,7 +79,7 @@ version = 1.5 : WinningPrize domain test 추가
 
 
 - **Rank**
-- [ ] 번호와 맞는 등수 확인
+- [x] 번호와 맞는 등수 확인
 
 - **WinningPrize**
 - [x] 수익률 계산 확인
