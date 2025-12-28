@@ -19,7 +19,7 @@ public class WinningPrize {
     }
 
     public double prizeRatio(int money) {
-        double ratio = 0.0;
+        double ratio;
         ratio = (double) calculatePrize() / money;
         return ratio * 100;
     }

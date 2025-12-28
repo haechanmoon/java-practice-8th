@@ -28,7 +28,7 @@ public class WinningNumbers {
     public Map<Rank, Integer> mapping(Lottos lottos, int bonus) {
         Map<Rank, Integer> result = new EnumMap<>(Rank.class);
         for (Rank rank : Rank.values()) {
-            result.getOrDefault(rank, 0);
+            result.put(rank, 0);
         }
         for (Lotto lotto : lottos.getLottos()) {
             Rank rank = Rank.valueOf(lotto, winNums, bonus);
