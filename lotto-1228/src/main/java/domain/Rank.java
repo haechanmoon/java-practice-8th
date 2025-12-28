@@ -25,7 +25,7 @@ public enum Rank {
 
         for (Rank rank : Rank.values()) {
             if (rank.matchCount == winNums.matchCount(lotto) && rank.matchCount == 5) {
-                if (winNums.matchBonus(bonus)) {
+                if (winNums.matchBonus(lotto, bonus)) {
                     return SECOND;
                 }
                 return rank;

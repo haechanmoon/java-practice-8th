@@ -13,4 +13,8 @@ public class WinningNumbers {
     public int matchCount(Lotto lotto) {
         return lotto.matchCount(winNums);
     }
+
+    public boolean matchBonus(Lotto lotto, int bonus) {
+        return lotto.hasBonus(bonus);
+    }
 }
