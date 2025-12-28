@@ -10,5 +10,7 @@ public class WinningNumbers {
         this.winNums = winNums;
     }
 
-
+    public int matchCount(Lotto lotto) {
+        return lotto.matchCount(winNums);
+    }
 }
