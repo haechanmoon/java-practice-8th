@@ -36,8 +36,14 @@ class WinningNumbersTest {
         assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5)))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_SIZE);
+    }
 
-
+    @Test
+    @DisplayName("(예외) 숫자 범위가 1-45가 아닐 때")
+    void 숫자_범위가_1부터_45가_아닐_때() {
+        assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5, 46)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_RANGE_OUT);
     }
 
 }
