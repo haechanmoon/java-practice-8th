@@ -31,4 +31,11 @@ public class Lotto {
         return numbers.toString();
     }
 
+    public boolean hasBonus(int bonus) {
+        if (numbers.contains(bonus)) {
+            return true;
+        }
+        return false;
+    }
+
 }
