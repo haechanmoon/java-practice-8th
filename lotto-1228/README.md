@@ -36,7 +36,7 @@ version = 1.4 : WinningPrize domain 추가
 - [x] 당첨번호와 보너스 번호에 맞는 등수 계산
 
 - **WinningPrize**
-- [ ] 수익률 계산
+- [x] 수익률 계산
 
 #### service
 
