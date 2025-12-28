@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class LottoTest {
     @Test
@@ -35,27 +35,27 @@ class LottoTest {
     }
 
     @Test
-    @DisplayName("로또 번호를 오름차순으로 바꾸기")
-    void 로또_번호를_오름차순으로_바꾸기() {
+    @DisplayName("로또 번호를 문자열로 바꾸기")
+    void 로또_번호를_문자열_바꾸기() {
         List<Integer> numbers = List.of(1, 2, 3, 5, 6, 8);
         Lotto lotto = new Lotto(numbers);
 
         assertThat(lotto.toString()).isEqualTo("[1, 2, 3, 5, 6, 8]");
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = {"1", "2", "3", "4"})
-    @DisplayName("보너스 번호가 있는지 판단")
-    void 보너스_번호가_있는지_판단(int bonus) {
+    @ParameterizedTest(name = "보너스 번호가 {0}이면 결과는 {1}이어야 한다.")
+    @CsvSource({
+            "1, true",
+            "2, true",
+            "3, true",
+            "4, true",
+            "7, false",
+            "11, false",
+            "12, false"
+    })
+    void 보너스번호와_로또번호_매칭(int bonus, boolean expected) {
         Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
-        assertThat(lotto.hasBonus(bonus)).isEqualTo(true);
-    }
 
-    @ParameterizedTest
-    @ValueSource(strings = {"7", "8", "9", "10"})
-    @DisplayName("보너스 번호가 있는지 판단")
-    void 보너스_번호가_없는지_판단(int bonus) {
-        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
-        assertThat(lotto.hasBonus(bonus)).isEqualTo(false);
+        assertThat(lotto.hasBonus(bonus)).isEqualTo(expected);
     }
 }
