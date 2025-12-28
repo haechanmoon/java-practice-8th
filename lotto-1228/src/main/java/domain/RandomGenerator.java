@@ -6,11 +6,11 @@ import java.util.List;
 
 public class RandomGenerator {
 
-    private final int START_INCLUSIVE = 1;
-    private final int END_INCLUSIVE = 45;
-    private final int COUNT = 6;
+    private static final int START_INCLUSIVE = 1;
+    private static final int END_INCLUSIVE = 45;
+    private static final int COUNT = 6;
 
-    public List<Integer> generateRandom() {
+    public static List<Integer> generateRandom() {
         return new ArrayList<>(Randoms.pickUniqueNumbersInRange(START_INCLUSIVE, END_INCLUSIVE, COUNT));
     }
 }
