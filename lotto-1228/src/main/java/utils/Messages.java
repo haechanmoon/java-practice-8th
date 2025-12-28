@@ -12,4 +12,6 @@ public class Messages {
     public static final String REQUEST_BONUS_NUMBERS = "보너스 번호를 입력해 주세요.";
     public static final String PRINT_LOTTO_COUNT = "%d개를 구매했습니다.%n";
     public static final String ERROR_IS_BLANK = "[ERROR] 값을 입력해 주세요.";
+    public static final String PRINT_STATISTICS = "당첨 통계\n---";
+    public static final String PRINT_RATIO = "총 수익률은 %.1f%% 입니다.";
 }

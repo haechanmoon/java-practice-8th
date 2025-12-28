@@ -15,22 +15,19 @@ import utils.Validator;
 public class LottoService {
 
     private final int money;
-    private final List<Integer> winningNumbers;
-    private final int bonusNumber;
+    private final Lottos lottos;
 
-    public LottoService(String money, String winningNumbers, String bonusNumber) {
+    public LottoService(final String money) {
         this.money = Parser.getNumber(money);
         Validator.validateMoneyUnit(this.money);
-        this.winningNumbers = Parser.getWinningNumbers(winningNumbers);
-        this.bonusNumber = Parser.getNumber(bonusNumber);
+        this.lottos = generateLottos();
     }
 
-    private int lottoCount() {
-        ;
+    public int lottoCount() {
         return money / 1000;
     }
 
-    public Lottos generateLottos() {
+    private Lottos generateLottos() {
         List<Lotto> lottos = new ArrayList<>();
         for (int i = 0; i < lottoCount(); i++) {
             lottos.add(new Lotto(RandomGenerator.generateRandom()));
@@ -39,17 +36,18 @@ public class LottoService {
     }
 
     public String printLottos() {
-        Lottos lottos = generateLottos();
         return lottos.toString();
     }
 
-    public Map<Rank, Integer> getMap() {
+    public Map<Rank, Integer> getMap(String winningNumbersStr, String bonusNumberStr) {
+        List<Integer> winningNumbers = Parser.getWinningNumbers(winningNumbersStr);
+        int bonusNumber = Parser.getNumber(bonusNumberStr);
         WinningNumbers winNums = new WinningNumbers(winningNumbers);
-        return winNums.mapping(generateLottos(), bonusNumber);
+        return winNums.mapping(lottos, bonusNumber);
     }
 
-    public double resultRatio() {
-        WinningPrize prize = new WinningPrize(getMap());
+    public double resultRatio(Map<Rank, Integer> result) {
+        WinningPrize prize = new WinningPrize(result);
         return prize.prizeRatio(money);
     }
 }
