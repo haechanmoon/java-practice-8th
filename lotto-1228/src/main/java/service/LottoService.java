@@ -4,8 +4,11 @@ import domain.Lotto;
 import domain.Lottos;
 import domain.Parser;
 import domain.RandomGenerator;
+import domain.Rank;
+import domain.WinningNumbers;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import utils.Validator;
 
 public class LottoService {
@@ -38,4 +41,11 @@ public class LottoService {
         Lottos lottos = generateLottos();
         return lottos.toString();
     }
+
+    public Map<Rank, Integer> getMap() {
+        WinningNumbers winNums = new WinningNumbers(winningNumbers);
+        return winNums.mapping(generateLottos(), bonusNumber);
+    }
+
+   
 }
