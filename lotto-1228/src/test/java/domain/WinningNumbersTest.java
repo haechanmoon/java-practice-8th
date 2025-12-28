@@ -1,11 +1,13 @@
 package domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.List;
 import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import utils.Messages;
 
 class WinningNumbersTest {
 
@@ -29,6 +31,13 @@ class WinningNumbersTest {
     }
 
     @Test
-    @DisplayName("")
+    @DisplayName("(예외) 번호가 6개가 아닐 때")
+    void 번호가_6개가_아닐_때() {
+        assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5)))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_NOT_SIZE);
+
+
+    }
 
 }
