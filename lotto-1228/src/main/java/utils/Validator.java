@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class Validator {
@@ -15,6 +16,13 @@ public class Validator {
             if (val > 45 || val < 1) {
                 throw new IllegalArgumentException(Messages.ERROR_RANGE_OUT);
             }
+        }
+    }
+
+    public static void validateDuplicated(List<Integer> numbers) {
+        HashSet<Integer> validateBoard = new HashSet<>(numbers);
+        if (validateBoard.size() != numbers.size()) {
+            throw new IllegalArgumentException(Messages.ERROR_NUMBER_DUPLICATED);
         }
     }
 }
