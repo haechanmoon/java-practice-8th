@@ -6,12 +6,12 @@ import utils.Validator;
 
 public class Parser {
 
-    public int getNumber(String input) {
+    public static int getNumber(String input) {
         Validator.validateIsDigit(input);
         return Integer.parseInt(input);
     }
 
-    public List<Integer> getList(String input) {
+    public static List<Integer> getWinningNumbers(String input) {
         List<String> numberLetter = List.of(input.split(","));
         List<Integer> numbers = new ArrayList<>();
         for (String val : numberLetter) {
