@@ -83,4 +83,4 @@ version = 1.5 : WinningPrize domain test 추가
 - [ ] 번호와 맞는 등수 확인
 
 - **WinningPrize**
-- [ ] 수익률 계산 확인
+- [x] 수익률 계산 확인
