@@ -21,6 +21,7 @@ public class WinningNumbers {
     }
 
     public boolean matchBonus(Lotto lotto, int bonus) {
+        Validator.validateBonus(winNums, bonus);
         return lotto.hasBonus(bonus);
     }
 
