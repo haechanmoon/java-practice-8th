@@ -20,4 +20,13 @@ public class Car {
         return name + " : "
                 + "-".repeat(Math.max(0, position));
     }
+
+    public String validateWinner(int winNum) {
+        if (position < winNum) {
+            return "";   // 이거 한번 검사 받아보자.
+        }
+        return name;
+    }
+
+
 }
