@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import utils.Validator;
 
 public class Parser {
 
@@ -9,13 +10,14 @@ public class Parser {
         List<String> names = new ArrayList<>();
         String[] nameSet = input.split(",");
         for (String name : nameSet) {
+            Validator.validateNameLength(name);
             names.add(name);
         }
         return names;
     }
 
     public static int parserTurn(String input) {
-        int turn = 0;
+        int turn;
         turn = Integer.parseInt(input);
         return turn;
     }
