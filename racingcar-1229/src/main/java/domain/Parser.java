@@ -13,4 +13,10 @@ public class Parser {
         }
         return names;
     }
+
+    public static int parserTurn(String input) {
+        int turn = 0;
+        turn = Integer.parseInt(input);
+        return turn;
+    }
 }
