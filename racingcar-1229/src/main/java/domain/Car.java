@@ -15,4 +15,9 @@ public class Car {
             position++;
         }
     }
+
+    public String printPosition() {
+        return name + " : "
+                + "-".repeat(Math.max(0, position));
+    }
 }
