@@ -13,6 +13,7 @@ public class Parser {
             Validator.validateNameLength(name);
             names.add(name);
         }
+        Validator.validatorDuplicate(names);
         return names;
     }
 
@@ -21,4 +22,5 @@ public class Parser {
         turn = Integer.parseInt(input);
         return turn;
     }
+
 }
