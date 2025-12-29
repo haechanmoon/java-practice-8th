@@ -17,4 +17,16 @@ public class Cars {
         }
         return currentBoard.toString();
     }
+
+    public String goCars(int random) {
+        for (Car car : cars) {
+            car.go(random);
+        }
+        return carsPosition();
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
 }
