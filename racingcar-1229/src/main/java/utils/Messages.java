@@ -6,4 +6,6 @@ public class Messages {
     public static final String PRINT_FINAL_WINNER = "최종 우승자 : ";
     public static final String ERROR_TOO_LONG_NAME = "[ERROR] 이름이 너무 깁니다.";
     public static final String ERROR_NAME_DUPLICATED = "[ERROR] 이름이 중복되었습니다.";
+    public static final String ERROR_IS_BLANK = "[ERROR] 값을 입력해주시기 바랍니다.";
+    public static final String ERROR_IS_NOT_DIGIT = "[ERROR] 숫자를 입력해주시기 바랍니다.";
 }
