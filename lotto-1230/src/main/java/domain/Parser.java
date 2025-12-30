@@ -25,7 +25,9 @@ public class Parser {
     }
 
     public static int parseBonus(String input) {
+
         Validator.validateIsDigit(input);
-        return Integer.parseInt(input);
+        int bonus = Integer.parseInt(input);
+        return bonus;
     }
 }

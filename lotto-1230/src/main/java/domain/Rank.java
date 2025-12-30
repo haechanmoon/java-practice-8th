@@ -9,7 +9,7 @@ public enum Rank {
     SECOND(5, 30000000),
     FIRST(6, 2000000000);
 
-    private final int matchCount;
+    public final int matchCount;
     public final int prize;
 
     Rank(int matchCount, int prize) {

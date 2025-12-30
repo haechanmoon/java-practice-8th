@@ -1,5 +1,6 @@
 package utils;
 
+import domain.WinningNumbers;
 import java.util.HashSet;
 import java.util.List;
 
@@ -40,6 +41,12 @@ public class Validator {
     public static void validateIsUnit(int money) {
         if ((money % 1000 != 0) || money == 0) {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_UNIT);
+        }
+    }
+
+    public static void validateBonusRange(int bonus, WinningNumbers winNums) {
+        if (winNums.matchBonus(bonus)) {
+            throw new IllegalArgumentException(Messages.ERROR_BONUS_DUPLICATED);
         }
     }
 }

@@ -1,5 +1,7 @@
 package View;
 
+import domain.Rank;
+import java.util.Map;
 import utils.Messages;
 
 public class OutputView {
@@ -25,5 +27,19 @@ public class OutputView {
 
     public static void printRatio(double ratio) {
         System.out.printf(Messages.PRINT_RATIO, ratio);
+    }
+
+    public static void printStatistics(Map<Rank, Integer> result) {
+        System.out.println(Messages.PRINT_STATISTICS);
+        for (Rank rank : Rank.values()) {
+            if (rank == Rank.MISS) {
+                continue;
+            }
+            System.out.printf("%d개 일치 (%,d원) - %d개%n", rank.matchCount, rank.prize, result.get(rank));
+        }
+    }
+
+    public static void printLottoCount(int money) {
+        System.out.printf(Messages.PRINT_COUNT, money / 1000);
     }
 }
