@@ -26,5 +26,14 @@ public class Lotto {
         return count;
     }
 
+    public boolean matchBonusNumber(int bonus) {
+        for (Integer num : numbers) {
+            if (num == bonus) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }
