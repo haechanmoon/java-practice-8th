@@ -14,4 +14,8 @@ public class WinningNumbers {
         return lotto.matchWinningNumbers(winNums);
     }//이게 필요한건가? 일단 보류
 
+    public boolean matchBonus(int bonus) {
+        return winNums.contains(bonus);
+    }
+
 }
