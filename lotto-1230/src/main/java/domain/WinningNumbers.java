@@ -26,7 +26,7 @@ public class WinningNumbers {
             if (rank == Rank.MISS) {
                 continue;
             }
-            result.getOrDefault(rank, 0);
+            result.put(rank, 0);
             for (Lotto lotto : lottos.getLottos()) {
                 int matchCount = lotto.matchWinningNumbers(winNums);
                 boolean matchBonus = lotto.matchBonusNumber(bonus);

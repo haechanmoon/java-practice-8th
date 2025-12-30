@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RandomGenerator {
 
-    public List<Integer> generateNumbers() {
+    public static List<Integer> generateNumbers() {
         return Randoms.pickUniqueNumbersInRange(1, 45, 6);
     }
 }
