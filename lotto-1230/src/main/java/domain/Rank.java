@@ -37,7 +37,7 @@ public enum Rank {
         return winNums.matchLotto(lotto);
     }
 
-    public static Rank valueOf(int matchCount, boolean bonusMatch) {
+    public static Rank valueOf(int matchCount) {
         if (matchCount < 3) {
             return MISS;
         }

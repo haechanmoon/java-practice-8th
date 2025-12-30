@@ -35,7 +35,12 @@ public class OutputView {
             if (rank == Rank.MISS) {
                 continue;
             }
-            System.out.printf("%d개 일치 (%,d원) - %d개%n", rank.matchCount, rank.prize, result.get(rank));
+            if (rank == Rank.SECOND) {
+                System.out.printf("%d개 일치, 보너스 볼 일치 (%,d원) - %d개%n", rank.matchCount, rank.prize,
+                        result.getOrDefault(rank, 0));
+            } else {
+                System.out.printf("%d개 일치 (%,d원) - %d개%n", rank.matchCount, rank.prize, result.getOrDefault(rank, 0));
+            }
         }
     }
 

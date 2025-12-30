@@ -12,6 +12,6 @@ public class Messages {
     public static final String ERROR_NOT_DIGIT = "[ERROR] 숫자를 입력해주시기 바람니다.";
     public static final String ERROR_IS_NOT_UNIT = "[ERROR] 1000단위의 숫자를 입력해 주시기 바랍니다.";
     public static final String PRINT_STATISTICS = "\n당첨통계\n---";
-    public static final String PRINT_COUNT = "%n%d개를 구입하셨습니다.%n";
+    public static final String PRINT_COUNT = "%n%d개를 구매했습니다.%n";
     public static final String ERROR_BONUS_DUPLICATED = "[ERROR] 보너스 번호가 당첨번호와 중복되었습니다.";
 }

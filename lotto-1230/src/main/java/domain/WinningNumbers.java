@@ -34,7 +34,7 @@ public class WinningNumbers {
             for (Lotto lotto : lottos.getLottos()) {
                 int matchCount = lotto.matchWinningNumbers(winNums);
                 boolean matchBonus = lotto.matchBonusNumber(bonus);
-                result.put(Rank.valueOf(matchCount, matchBonus), result.get(rank) + 1);
+                result.put(Rank.valueOf(matchCount), result.get(rank) + 1);
             }
         }
         //각 로또가 몇등인지. 그리고 그 로또의 랭크를 추출. 아 여기 엄청오래걸렸네.
