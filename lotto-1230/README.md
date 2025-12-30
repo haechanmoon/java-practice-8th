@@ -39,7 +39,7 @@ version : 1.1 WinningPrize 도메인 추가
 - [x] 1-45 번호를 6개 생성
 
 - **WinningPrize**
-- [ ] 총 당첨금 계산 및 수익률 계산
+- [x] 총 당첨금 계산 및 수익률 계산
 
 #### Test
 
