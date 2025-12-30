@@ -9,4 +9,6 @@ public class Messages {
     public static final String ERROR_SIZE = "[ERROR] 번호는 6개여야 합니다.";
     public static final String ERROR_DUPLICATED = "[ERROR] 번호가 중복되었습니다.";
     public static final String ERROR_RANGE_OUT = "[ERROR] 번호가 범위를 넘어갔습니다.";
+    public static final String ERROR_NOT_DIGIT = "[ERROR] 숫자를 입력해주시기 바람니다.";
+    public static final String ERROR_IS_NOT_UNIT = "[ERROR] 1000단위의 숫자를 입력해 주시기 바랍니다.";
 }
