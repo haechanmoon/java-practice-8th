@@ -27,7 +27,7 @@ public class LottoGame {
         Map<Rank, Integer> result = calculateResult(lottos);
         OutputView.printStatistics(result);
         //수익률을 구한다.
-        double ratio = WinningPrize.ratio(result, lottos.lottosSize());
+        double ratio = WinningPrize.ratio(result, money);
         OutputView.printRatio(ratio);
 
     }

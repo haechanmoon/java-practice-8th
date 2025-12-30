@@ -37,18 +37,21 @@ public enum Rank {
         return winNums.matchLotto(lotto);
     }
 
-    public static Rank valueOf(int matchCount) {
+    public static Rank valueOf(int matchCount, boolean matchBonus) {
         if (matchCount < 3) {
             return MISS;
         }
-        for (Rank rank : Rank.values()) {
-            if (rank.matchCount == matchCount && matchCount == 5) {
+        if (matchCount == 5) {
+            if (matchBonus) {
                 return SECOND;
             }
-            return rank;
+            return THIRD;
+        }
+        for (Rank rank : Rank.values()) {
+            if (rank.matchCount == matchCount) {
+                return rank;
+            }
         }
         return MISS;
     }
-
-
 }
