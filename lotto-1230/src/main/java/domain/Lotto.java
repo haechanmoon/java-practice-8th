@@ -1,12 +1,15 @@
 package domain;
 
 import java.util.List;
+import utils.Validator;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validate(numbers);
+        Validator.validateSize(numbers);
+        Validator.validateDuplicated(numbers);
+        Validator.validateRange(numbers);
         this.numbers = numbers;
     }
 
