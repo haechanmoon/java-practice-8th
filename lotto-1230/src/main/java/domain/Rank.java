@@ -17,21 +17,38 @@ public enum Rank {
         this.prize = prize;
     }
 
-    public Rank valueOf(Lotto lotto, WinningNumbers winNums, int bonus) {
-        for (Rank rank : Rank.values()) {
-            if (matchCount < 3) {
-                return MISS;
-            }
+//    public static Rank valueOf(Lotto lotto, WinningNumbers winNums, int bonus) {
+//        for (Rank rank : Rank.values()) {
+//            if (matchCount(lotto, winNums) < 3) {
+//                return MISS;
+//            }
+//
+//            if (rank.matchCount == matchCount(lotto, winNums)) {
+//                if (rank.matchCount == 5 && lotto.matchBonusNumber(bonus)) {
+//                    return SECOND;
+//                }
+//                return rank;
+//            }
+//        }
+//        return MISS;
+//    }
 
-            if (rank.matchCount == winNums.matchLotto(lotto)) {
-                if (rank.matchCount == 5 && lotto.matchBonusNumber(bonus)) {
-                    return SECOND;
-                }
-                return rank;
+    private static int matchCount(Lotto lotto, WinningNumbers winNums) {
+        return winNums.matchLotto(lotto);
+    }
+
+    public static Rank valueOf(int matchCount, boolean bonusMatch) {
+        if (matchCount < 3) {
+            return MISS;
+        }
+        for (Rank rank : Rank.values()) {
+            if (rank.matchCount == matchCount && matchCount == 5) {
+                return SECOND;
             }
+            return rank;
         }
         return MISS;
-    } //들여쓰기 3줄 이상!! 확인해봐라!
+    }
 
 
 }

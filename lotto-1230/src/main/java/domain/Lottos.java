@@ -18,4 +18,7 @@ public class Lottos {
         return lottoBoard.toString();
     }
 
+    public List<Lotto> getLottos() {
+        return lottos;
+    }
 }
