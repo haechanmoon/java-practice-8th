@@ -13,7 +13,7 @@ version 1.0 : 초안 작성
 - [ ] 게임을 재시작 할지 말지 정하기
 
 - **Computer**
-- [ ] 받은 값을 자신의 List<Integer> 와 비교 후 Result로 리턴
+- [x] 받은 값을 자신의 List<Integer> 와 비교 후 Result로 리턴
 
 - **Parser**
 - [ ] 받은 문자열을 숫자로 변환
