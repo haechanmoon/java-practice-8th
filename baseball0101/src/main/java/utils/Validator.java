@@ -25,4 +25,10 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_SIZE);
         }
     }
+
+    public static void validateCommand(String input) {
+        if(!input.equals("1") && !input.equals("2")){
+            throw new IllegalArgumentException(Messages.ERROR_IS_NOT_COMMAND);
+        }
+    }
 }

@@ -19,6 +19,11 @@ public class Parser {
         return numbers;
     }
 
+    public static String commandParse(String input){
+
+        return input;
+    }
+
 
 
 
