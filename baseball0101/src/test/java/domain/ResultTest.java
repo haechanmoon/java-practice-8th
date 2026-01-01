@@ -16,4 +16,12 @@ class ResultTest {
         assertThat(result.convertResult()).contains("3스트라이크");
     }
 
+    @Test
+    @DisplayName("아무것도 없을 때 낫싱을 잘 출력하는지")
+    void 낫싱일_때(){
+        Result result = new Result(0,0);
+
+        assertThat(result.convertResult()).contains("낫싱");
+    }
+
 }
