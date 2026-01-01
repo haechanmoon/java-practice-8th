@@ -40,4 +40,13 @@ class ParserTest {
                 .hasMessageContaining(Messages.ERROR_IS_NOT_COMMAND);
     }
 
+    @Test
+    @DisplayName("(예외) 숫자가 겹칠 때")
+    void 숫자가_겹칠_때(){
+        String input = "113";
+
+        assertThatThrownBy(()->Parser.convertString(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_NUMBER_DUPLICATED);
+    }
 }
