@@ -13,13 +13,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Supplier;
 import utils.Validator;
 
 public class LottoGame {
 
     public void start() {
 
-        int money = getMoney();
+        int money = retry(() -> {
+            String input = InputView.getInput();
+            return Parser.parseMoney(input);
+        });
         Lottos lottos = generateLottos(money);
         lottoPrint(lottos, money);
 
@@ -50,10 +54,15 @@ public class LottoGame {
 
     private Map<Rank, Integer> calculateResult(Lottos lottos) {
 
-        OutputView.requestWinningNumbers();
-        WinningNumbers winNums = new WinningNumbers(Parser.parseNumbers(InputView.getInput()));
-        OutputView.requestBonusNumber();
-        int bonus = Parser.parseBonus(InputView.getInput());
+        WinningNumbers winNums = retry(() -> {
+            OutputView.requestWinningNumbers();
+            return new WinningNumbers(Parser.parseNumbers(InputView.getInput()));
+        });
+
+        int bonus = retry(() -> {
+            OutputView.requestBonusNumber();
+            return Parser.parseBonus(InputView.getInput());
+        });
         Validator.validateBonusRange(bonus, winNums);
         return winNums.getResult(lottos, bonus);
     }
@@ -68,4 +77,13 @@ public class LottoGame {
         return new Lottos(lottos);
     }
 
+    private <T> T retry(Supplier<T> supplier) {
+        while (true) {
+            try {
+                return supplier.get();
+            } catch (IllegalArgumentException e) {
+                OutputView.printError(e.getMessage());
+            }
+        }
+    }
 }
