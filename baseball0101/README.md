@@ -5,7 +5,7 @@ version 1.0 : 초안 작성
 ## 기능 구현 리스트
 
 - **RandomGenerator**
-- [ ] 겹치지 않는 List<Integer> 랜덤값 생성 
+- [x] 겹치지 않는 List<Integer> 랜덤값 생성 
 
 - **Result**
 - [ ] 몇 스트라이크, 몇 볼인지 문자로 만들기
