@@ -30,6 +30,12 @@ public class Result {
         return strikeNum +STRIKE;
     }
 
+    public void retry(String input){
+        if(strikeNum==3){
+            //아 이건 좀 나중에 짜야할 거 같은데.
+        }
+    }
+
 
 
 
