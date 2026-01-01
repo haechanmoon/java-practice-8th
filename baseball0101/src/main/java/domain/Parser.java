@@ -20,7 +20,7 @@ public class Parser {
     }
 
     public static String commandParse(String input){
-
+        Validator.validateCommand(input);
         return input;
     }
 
