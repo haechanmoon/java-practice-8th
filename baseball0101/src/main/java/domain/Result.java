@@ -2,8 +2,8 @@ package domain;
 
 public class Result {
 
-    public int strikeNum;
-    public int ballNum;
+    private int strikeNum;
+    private int ballNum;
 
     private static final String STRIKE = "스트라이크";
     private static final String BALL = "볼";
