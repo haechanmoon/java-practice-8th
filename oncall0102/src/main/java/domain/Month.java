@@ -22,7 +22,7 @@ public enum Month {
         this.dateCount = dateCount;
     }
 
-    public Month valueOf(int num) {
+    public static Month valueOf(int num) {
         for (Month month : Month.values()) {
             if (month.num == num) {
                 return month;

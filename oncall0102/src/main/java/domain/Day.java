@@ -8,12 +8,11 @@ public enum Day {
     THURSDAY(true, "목", 3),
     FRIDAY(true, "금", 4),
     SATURDAY(false, "토", 5),
-    SUNDAY(false, "일", 6),
-    HOLIDAY(false, "(휴일)", 8);
+    SUNDAY(false, "일", 6);
 
     private final boolean weekday;
-    private final String input;
-    private final int value;
+    public final String input;
+    public final int value;
 
     Day(boolean weekday, String input, int value) {
         this.weekday = weekday;
@@ -21,12 +20,12 @@ public enum Day {
         this.value = value;
     }
 
-    public Day valueDay(String input) {
+    public static Day valueDay(String input) {
         for (Day day : Day.values()) {
             if (day.input.equals(input)) {
                 return day;
             }
         }
-        return HOLIDAY;
+        return MONDAY;
     }
 }

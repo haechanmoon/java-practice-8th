@@ -1,7 +1,10 @@
 package oncall;
 
+import controller.OncallGame;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        OncallGame game = new OncallGame();
+        game.start();
     }
 }
