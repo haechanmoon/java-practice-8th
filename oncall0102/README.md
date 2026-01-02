@@ -23,7 +23,7 @@ version : 1.0 초안 작성
 - [ ] 평일 순번 받음
 
 - **Parser**
-- [ ] 입력값을 People에게 List<String> 형태로 반환
+- [x] 입력값을 People에게 List<String> 형태로 반환
 
 - **People**
 - [ ] List<String> 갖고있음
