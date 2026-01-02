@@ -14,7 +14,7 @@ public enum Month {
     NOV(11, 30),
     DEC(12, 31);
 
-    private final int num;
+    public final int num;
     public final int dateCount;
 
     Month(int num, int dateCount) {
