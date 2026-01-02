@@ -41,4 +41,17 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_BLANK);
         }
     }
+
+    public static void validateMonthError(int month) {
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException(Messages.ERROR_MONTH);
+        }
+    }
+
+    public static void validateDayError(String parseDay) {
+        List<String> day = List.of("월", "화", "수", "목", "금", "토", "일");
+        if (!day.contains(parseDay)) {
+            throw new IllegalArgumentException(Messages.ERROR_DAY);
+        }
+    }
 }

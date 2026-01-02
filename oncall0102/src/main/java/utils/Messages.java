@@ -6,9 +6,11 @@ public class Messages {
     public static final String REQUEST_WEEKDAY_NAMES = "평일 비상 근무 순번대로 사원 닉네임을 입력하세요> ";
     public static final String REQUEST_WEEKEND_NAMES = "휴일 비상 근무 순번대로 사원 닉네임을 입력하세요> ";
 
+
     private static final String ERROR_PREFIX = "[ERROR] ";
 
-
+    public static final String ERROR_DAY = ERROR_PREFIX + "요일을 잘 선택해 주세요.";
+    public static final String ERROR_MONTH = ERROR_PREFIX + "달을 잘 선택해주세요";
     public static final String ERROR = ERROR_PREFIX + "올바르지 않은 값입니다.";
     public static final String ERROR_NAME_LENGTH = ERROR_PREFIX + "이름이 너무 깁니다.";
     public static final String ERROR_MANY_PEOPLE = ERROR_PREFIX + "사람이 너무 많습니다.";

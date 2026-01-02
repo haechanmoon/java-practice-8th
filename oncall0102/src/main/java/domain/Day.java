@@ -28,4 +28,19 @@ public enum Day {
         }
         return MONDAY;
     }
+
+    //하.이게 코드의 힘이구나...와. 진짜 재밌다. !
+    public Day circleDay() {
+        int count = (value + 1) % 7;
+        for (Day day : Day.values()) {
+            if (day.value == count) {
+                return day;
+            }
+        }
+        return MONDAY;
+    }
+
+    public boolean isWeekend() {
+        return !this.weekday;
+    }
 }

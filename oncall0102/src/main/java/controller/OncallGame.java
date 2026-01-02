@@ -1,6 +1,7 @@
 package controller;
 
 import domain.Day;
+import domain.Holiday;
 import domain.Month;
 import domain.Parser;
 import java.util.List;
@@ -13,42 +14,54 @@ public class OncallGame {
     public void start() {
 
         //월과 요일을 받음
-        OutputView.requestMonthAndDay();
-        String input = InputView.readInput();
-        int parseMonth = Parser.parseMonth(input);
-        String parseDay = Parser.parseDay(input);
 
-        //돌아가게만 만들자. 진짜 제발.예외 처리 다 신경끄셈.
+        MonthDay md = retry(() -> {
+            OutputView.requestMonthAndDay();
+            String input = InputView.readInput();
+            int parseMonth = Parser.parseMonth(input);
+            String parseDay = Parser.parseDay(input);
+            return new MonthDay(parseMonth, parseDay);
+        });
+
+        int parseMonth = md.month;
+        String parseDay = md.parseDay;
 
         Month month = Month.valueOf(parseMonth);
         Day day = Day.valueDay(parseDay);
 
-        // 평일 비상 근무 순번대로 이름 받음
-        List<String> weekDayNames = retry(() -> {
+        Names names = retry(() -> {
             OutputView.requestWeekDayNames();
-            String input1 = InputView.readInput();
-            return Parser.parseName(input1);
-        });
+            List<String> weekdayNames = Parser.parseName(InputView.readInput());
 
-        // 휴일 비상 근무 순번대로 이름 받음
-        List<String> wookEndNames = retry(() -> {
             OutputView.requestWeekEndNames();
-            String input2 = InputView.readInput();
-            return Parser.parseName(input2);
+            List<String> weekendNames = Parser.parseName(InputView.readInput());
+            return new Names(weekdayNames, weekendNames);
         });
-        int count = day.value & 7;
-        int size = weekDayNames.size() % 10;
-        //이제 쉽게 가. 자. 5월 1일이 휴일이니/ 쉬는날이니?
-        for (int i = 0; i < month.dateCount; i++) {
 
-            for (Day day1 : Day.values()) {
+        List<String> weekDayNames = names.workingDay;
+        List<String> weekEndNames = names.restDay;
 
-                if (day1.value == count + i) {
-                    day = day1;
-                }
+        String yesterdayWorker = null;
+
+        for (int i = 1; i <= month.dateCount; i++) {
+            boolean isHoliday = Holiday.checkHoliday(month.num, i) || day.isWeekend();
+            List<String> currentList = isHoliday ? weekEndNames : weekDayNames;
+            String todayWorker = currentList.getFirst();
+
+            if (todayWorker.equals(yesterdayWorker)) {
+                String temp = currentList.removeFirst();
+                todayWorker = currentList.getFirst();
+                currentList.add(1, temp);
+            } else {
+                currentList.add(currentList.removeFirst());
             }
-            System.out.printf("%d월 %d일 %s %s%n", month.num, i, day.input, weekDayNames.get(i));
-
+            if (Holiday.checkHoliday(month.num, i) && !day.isWeekend()) {
+                System.out.printf("%d월 %d일 %s(휴일) %s%n", month.num, i, day.input, todayWorker);
+            } else {
+                System.out.printf("%d월 %d일 %s %s%n", month.num, i, day.input, todayWorker);
+            }
+            yesterdayWorker = todayWorker;
+            day = day.circleDay();
         }
 
 

@@ -18,9 +18,9 @@ public enum Holiday {
         this.date = date;
     }
 
-    public boolean checkHoliday(Month month) {
+    public static boolean checkHoliday(int month, int date) {
         for (Holiday holiday : Holiday.values()) {
-            if (holiday.month == month.num) {
+            if (holiday.month == month && date == holiday.date) {
                 return true;
             }
         }
