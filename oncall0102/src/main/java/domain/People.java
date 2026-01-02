@@ -11,6 +11,7 @@ public class People {
         Validator.validateNameLength(names);
         Validator.validateNameCount(names);
         Validator.validateNameDuplicated(names);
+        Validator.validateBlankName(names);
         this.names = names;
     }
 

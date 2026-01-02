@@ -27,4 +27,12 @@ public class Validator {
             throw new IllegalArgumentException((Messages.ERROR_NAME_DUPLICATED));
         }
     }
+
+    public static void validateBlankName(List<String> names) {
+        for (String name : names) {
+            if (name.isBlank()) {
+                throw new IllegalArgumentException(Messages.ERROR_BLANK_NAME);
+            }
+        }
+    }
 }
