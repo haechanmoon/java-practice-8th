@@ -9,6 +9,7 @@ public class People {
 
     public People(List<String> names) {
         Validator.validateNameLength(names);
+        Validator.validateNameCount(names);
         this.names = names;
     }
 
