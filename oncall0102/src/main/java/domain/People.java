@@ -10,6 +10,7 @@ public class People {
     public People(List<String> names) {
         Validator.validateNameLength(names);
         Validator.validateNameCount(names);
+        Validator.validateNameDuplicated(names);
         this.names = names;
     }
 

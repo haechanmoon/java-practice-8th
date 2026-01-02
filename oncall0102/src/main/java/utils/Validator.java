@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.HashSet;
 import java.util.List;
 
 public class Validator {
@@ -17,6 +18,13 @@ public class Validator {
     public static void validateNameCount(List<String> names) {
         if (MAX_COUNT < names.size()) {
             throw new IllegalArgumentException(Messages.ERROR_MANY_PEOPLE);
+        }
+    }
+
+    public static void validateNameDuplicated(List<String> names) {
+        HashSet<String> checker = new HashSet<>(names);
+        if (checker.size() != names.size()) {
+            throw new IllegalArgumentException((Messages.ERROR_NAME_DUPLICATED));
         }
     }
 }
