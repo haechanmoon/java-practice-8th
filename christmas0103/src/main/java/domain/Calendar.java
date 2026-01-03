@@ -1,6 +1,20 @@
 package domain;
 
-public enum Calendar {
+import java.util.List;
+
+public class Calendar {
+
+    private final List<Integer> STAR_DATE = List.of(3, 10, 17, 24, 25, 31);
+
+    public boolean isStarDate(int date) {
+        return STAR_DATE.contains(date);
+    }
+
+
+    public static boolean isWeekend(int date) {
+        int weekend = date % 7;
+        return weekend == 1 || weekend == 2;
+    }
 
 
 }
