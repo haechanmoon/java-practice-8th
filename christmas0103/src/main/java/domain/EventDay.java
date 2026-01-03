@@ -2,9 +2,9 @@ package domain;
 
 import java.util.List;
 
-public class EvantDay {
+public class EventDay {
 
-    private final List<Integer> STAR_DATE = List.of(3, 10, 17, 24, 25, 31);
+    private static final List<Integer> STAR_DATE = List.of(3, 10, 17, 24, 25, 31);
 
     public boolean isStarDate(int date) {
         return STAR_DATE.contains(date);
