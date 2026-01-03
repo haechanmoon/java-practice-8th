@@ -16,5 +16,12 @@ public class Calendar {
         return weekend == 1 || weekend == 2;
     }
 
+    public int dayDiscount(int date) {
+        if (date > 25) {
+            return 0;
+        }
+        return 900 + date * 100;
+    }
+
 
 }
