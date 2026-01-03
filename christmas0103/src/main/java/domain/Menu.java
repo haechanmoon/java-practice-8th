@@ -27,7 +27,7 @@ public enum Menu {
         this.menuType = menuType;
     }
 
-    public static Menu converMenu(String input) {
+    public static Menu convertMenu(String input) {
         for (Menu menu : Menu.values()) {
             if (menu.name.equals(input)) {
                 return menu;
@@ -36,15 +36,13 @@ public enum Menu {
         throw new IllegalArgumentException(Messages.ERROR_NO_MENU);
     }
 
-    public MenuType getMenuType(String input) {
-        for (Menu menu : Menu.values()) {
-            if (menu.name.equals(input)) {
-                return menu.menuType;
-            }
-        }
-        return LIP.menuType;
+
+    public MenuType getMenuType() {
+        return menuType;
     }
 
-
+    public int getCost() {
+        return cost;
+    }
 }
 
