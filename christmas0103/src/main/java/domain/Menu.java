@@ -8,7 +8,7 @@ public enum Menu {
     TAPAS("타파스", 5500, MenuType.EPI),
     SALAD("시저샐러드", 8000, MenuType.EPI),
     STAKE("티본스테이크", 55000, MenuType.MAIN),
-    LIP("바베큐립", 54000, MenuType.MAIN),
+    LIP("바비큐립", 54000, MenuType.MAIN),
     SEAPASTA("해산물파스타", 35000, MenuType.MAIN),
     CHRPASTA("크리스마스파스타", 25000, MenuType.MAIN),
     CHOCOCAKE("초코케이크", 15000, MenuType.DESSERT),
@@ -17,7 +17,7 @@ public enum Menu {
     REDWINE("레드와인", 60000, MenuType.DRINK),
     CHAMPAIN("샴페인", 25000, MenuType.DRINK);
 
-    private final String name;
+    public final String name;
     private final int cost;
     private final MenuType menuType;
 
