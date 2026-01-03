@@ -2,7 +2,7 @@ package domain;
 
 import java.util.List;
 
-public class Calendar {
+public class EvantDay {
 
     private final List<Integer> STAR_DATE = List.of(3, 10, 17, 24, 25, 31);
 
