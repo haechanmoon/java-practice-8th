@@ -36,9 +36,15 @@ public enum Menu {
         throw new IllegalArgumentException(Messages.ERROR_NO_MENU);
     }
 
+    public MenuType getMenuType(String input) {
+        for (Menu menu : Menu.values()) {
+            if (menu.name.equals(input)) {
+                return menu.menuType;
+            }
+        }
+        return LIP.menuType;
+    }
+
 
 }
 
-enum MenuType {
-    EPI, MAIN, DESSERT, DRINK;
-}
