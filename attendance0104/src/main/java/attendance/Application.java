@@ -1,7 +1,10 @@
 package attendance;
 
+import controller.AttendanceGame;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        AttendanceGame attendanceGame = new AttendanceGame();
+        attendanceGame.start();
     }
 }
