@@ -1,4 +1,4 @@
-package lotto;
+package domain;
 
 import java.util.List;
 
@@ -16,5 +16,15 @@ public class Lotto {
         }
     }
 
-    // TODO: 추가 기능 구현
+    public int checkCount(List<Integer> numbers){
+        int count = 0;
+        for(int num : this.numbers){
+            if(numbers.contains(num)){
+                count++;
+            }
+        }
+        return count;
+    }
+
+
 }
