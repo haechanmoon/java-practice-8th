@@ -12,6 +12,7 @@ public class Lotto {
         validate(numbers);
         Validator.validateSize(numbers);
         Validator.validateDuplicated(numbers);
+        Validator.validateRange(numbers);
         this.numbers = numbers;
     }
 
