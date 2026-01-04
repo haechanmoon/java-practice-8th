@@ -1,11 +1,13 @@
 package domain;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
+        Collections.sort(numbers);
         validate(numbers);
         this.numbers = numbers;
     }
@@ -26,5 +28,12 @@ public class Lotto {
         return count;
     }
 
+    public boolean checkBonus(int bonus){
+        return this.numbers.contains(bonus);
+    }
+
+    public String toString(){
+        return this.numbers.toString();
+    }
 
 }
