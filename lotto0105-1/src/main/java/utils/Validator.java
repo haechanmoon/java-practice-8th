@@ -44,4 +44,10 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_DIGIT);
         }
     }
+
+    public static void validateMoneyUnit(int money) {
+        if(money%1000!=0 || money==0){
+            throw new IllegalArgumentException(Messages.ERROR_IS_NOT_UNIT);
+        }
+    }
 }

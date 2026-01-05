@@ -17,8 +17,8 @@ version 1.2 Rank(`enum`) 기능 추가
 - [ ] Lotto들 번호를 String
 
 - **LottoStore**
-- [ ] (검증) 1000원단위인지/0이아닌지
-- [ ] 개수만큼 로또를 생성
+- [x] (검증) 1000원단위인지/0이아닌지
+- [x] 개수만큼 로또를 생성
 
 - **RandomNumberGenerator**
 - [x] 1~45 6개의 숫자 랜덤생성기
