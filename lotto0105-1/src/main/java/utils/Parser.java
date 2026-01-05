@@ -19,5 +19,9 @@ public class Parser {
         return numbers;
     }
 
+    public static int parseBonus(String input){
+        Validator.validateIsDigit(input);
+        return Integer.parseInt(input);
+    }
 
 }
