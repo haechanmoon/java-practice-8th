@@ -1,6 +1,7 @@
 package utils;
 
 public class Messages {
+
     private static final String ERROR_PREFIX = "[ERROR] ";
 
 
@@ -9,4 +10,5 @@ public class Messages {
     public static final String ERROR_RANGE_OVER = ERROR_PREFIX + "번호의 범위를 확인 바랍니다.";
     public static final String ERROR_BONUS_RANGE = ERROR_PREFIX + "보너스 번호는 1~45입니다.";
     public static final String ERROR_BONUS_DUPLICATED = ERROR_PREFIX + "보너스 번호가 당첨번호와 중복되었습니다.";
+    public static final String ERROR_IS_NOT_DIGIT = ERROR_PREFIX + "0이 아닌, 숫자형태를 입력해주시기 바랍니다.";
 }
