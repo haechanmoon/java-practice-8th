@@ -3,6 +3,14 @@ package utils;
 public class Messages {
 
 
+    public static final String REQUEST_MONEY = "구입금액을 입력해 주세요.";
+    public static final String PRINT_LOTTO_HEADER = "개를 구매했습니다.";
+    public static final String REQUEST_WINNING_NUMBERS = "당첨 번호를 입력해 주세요.";
+    public static final String REQUEST_BONUS_NUMBER = "\n보너스 번호를 입력해 주세요.";
+    public static final String PRINT_STATISTICS_HEADER = "\n당첨 통계\n---";
+    public static final String CANT_FIND = "없는등수입니다.";
+    public static final String PRINT_RATIO = "총 수익률은 %.1f%%입니다.";
+
 
     private static final String ERROR_PREFIX = "[ERROR] ";
 
