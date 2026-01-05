@@ -29,8 +29,8 @@ public class LottoGame {
         int bonus = retry(()->Parser.parseBonus(InputView.readInput()));
         OutputView.printStatisticsHeader();
         WinningNumbers winningNumbers = new WinningNumbers(winNums,bonus);
-        OutputView.printStatistics(winningNumbers.mapping(lottos));
-        Statistics statistics = new Statistics(winningNumbers.mapping(lottos));
+        OutputView.printStatistics(lottos.result(winningNumbers));
+        Statistics statistics = new Statistics(lottos.result(winningNumbers));
         OutputView.printRatio(statistics.ratio(money));
     }
 

@@ -4,7 +4,6 @@ import domain.Lotto;
 import domain.Lottos;
 import domain.Rank;
 import java.util.Map;
-import net.bytebuddy.asm.MemberSubstitution.Substitution.Chain.Step;
 import utils.Messages;
 
 public class OutputView {
@@ -43,18 +42,19 @@ public class OutputView {
     }
 
     public static void printStatistics(Map<Rank, Integer> mapping) {
-        System.out.println(statistics(mapping));
-
+        for(Rank rank : Rank.values()){
+            if(rank==Rank.MISS){
+                continue;
+            }
+            System.out.println(statistics(rank,mapping.get(rank)));
+        }
     }
 
-    private static String statistics(Map<Rank, Integer> mapping) {
-        for(Rank rank : Rank.values()){
-            if(rank==Rank.SECOND){
-                return String.format("%d개 일치, 보너스 볼 일치 (%,d원) - %d개%n", rank.getMatchCount(), rank.getPrize(), mapping.get(rank));
-            }
-            return String.format("%d개 일치 (%,d원) - %d개%n", rank.getMatchCount(), rank.getPrize(), mapping.get(rank));
-        }
-        throw new IllegalArgumentException(Messages.CANT_FIND);
+    private static String statistics(Rank rank, int count) {
+       if(rank == Rank.SECOND){
+           return String.format("%d개 일치, 보너스 볼 일치 (%,d원) - %d개",rank.getMatchCount(), rank.getPrize(), count);
+       }
+       return String.format("%d개 일치 (%,d원) - %d개",rank.getMatchCount(), rank.getPrize(), count);
     }
 
     public static void printRatio(double ratio) {

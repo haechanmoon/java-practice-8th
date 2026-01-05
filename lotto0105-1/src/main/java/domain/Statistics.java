@@ -15,7 +15,7 @@ public class Statistics {
         for(Rank rank : Rank.values()){
             total += result.getOrDefault(rank, 0)*rank.getPrize();
         }
-        return total/money;
+        return total/money *100;
     }
 
 }

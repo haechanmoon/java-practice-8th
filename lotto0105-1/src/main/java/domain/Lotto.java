@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import utils.Validator;
@@ -11,8 +12,9 @@ public class Lotto {
         Validator.validateSize(numbers);
         Validator.validateDuplicated(numbers);
         Validator.validateNumbersRange(numbers);
-        Collections.sort(numbers);
-        this.numbers = numbers;
+        List<Integer> copyNumbers = new ArrayList<>(numbers);
+        Collections.sort(copyNumbers);
+        this.numbers = copyNumbers;
     }
 
     public int matchCount(List<Integer> winNums){
