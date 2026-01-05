@@ -26,4 +26,16 @@ public class Validator {
             }
         }
     }
+
+    public static void validateBonusRange(int bonus) {
+        if(bonus<1||bonus>45){
+            throw new IllegalArgumentException(Messages.ERROR_BONUS_RANGE);
+        }
+    }
+
+    public static void validateBonusDuplicated(int bonus, List<Integer> winNums) {
+        if(winNums.contains(bonus)){
+            throw new IllegalArgumentException(Messages.ERROR_BONUS_DUPLICATED);
+        }
+    }
 }
