@@ -15,8 +15,4 @@ public class WinningNumbers {
         this.winNums = winNums;
     }
 
-    public Map<Rank, Integer> calculate(Lottos lottos, int bonus){
-
-    }
-
 }

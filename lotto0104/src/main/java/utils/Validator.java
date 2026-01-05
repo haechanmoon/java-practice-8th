@@ -24,4 +24,28 @@ public class Validator {
             }
         }
     }
+
+    public static void validate(String input) {
+        if(input.isBlank()){
+            throw new IllegalArgumentException(Messages.ERROR_IS_BLANK);
+        }
+    }
+
+    public static void validateIsDigit(String input) {
+        if(!input.matches("\\d+")){
+            throw new IllegalArgumentException(Messages.ERROR_NOT_DIGIT);
+        }
+    }
+
+    public static void validateIsUnit(int money) {
+        if (money % 1000 != 0 || money == 0) {
+            throw new IllegalArgumentException(Messages.ERROR_NOT_UNIT);
+        }
+    }
+
+    public static void validateBonusDuplicated(List<Integer> winNums, int bonus) {
+        if(winNums.contains(bonus)){
+            throw new IllegalArgumentException(Messages.ERROR_BONUS_DUPLICATED);
+        }
+    }
 }
