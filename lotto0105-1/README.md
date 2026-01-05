@@ -1,6 +1,6 @@
 # java-lotto-precourse
 
-version 1.2 Rank(`enum`) 기능 추가
+version 1.3 기능 구현 완료
 
 ## 기능 구현 리스트
 
@@ -13,8 +13,8 @@ version 1.2 Rank(`enum`) 기능 추가
 - [x] 당첨번호와 얼마가 맞았는지 반환
 - [x] 보너스 번호와 자신의 번호를 비교
 
-- **Lottos** (Lotto)들을 가지는 1급 클래스
-- [ ] Lotto들 번호를 String
+- **Lottos** 
+- (Lotto)들을 가지는 1급 클래스
 
 - **LottoStore**
 - [x] (검증) 1000원단위인지/0이아닌지
@@ -24,7 +24,6 @@ version 1.2 Rank(`enum`) 기능 추가
 - [x] 1~45 6개의 숫자 랜덤생성기
 
 - **Statistics**
-- [ ] 랭크와 개수를 매칭하여 결과를 반환
 - [x] 수익률 계산 반환
  
 - **WinningNumbers** (당첨번호와, 보너스 번호가짐)
