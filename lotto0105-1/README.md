@@ -1,6 +1,6 @@
 # java-lotto-precourse
 
-version 1.1 Lotto 기능 추가
+version 1.2 Rank(`enum`) 기능 추가
 
 ## 기능 구현 리스트
 
@@ -43,3 +43,6 @@ version 1.1 Lotto 기능 추가
   - [x] (검증) 모든 번호가 숫자형태인가?
 - [x] 보너스 번호를 받고 int로 반환
   - [x] (검증) 숫자 형태인가?
+
+- **Rank**
+- [ ] 자신의 랭크를 반환
