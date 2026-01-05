@@ -18,4 +18,12 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_DUPLICATED);
         }
     }
+
+    public static void validateNumbersRange(List<Integer> numbers) {
+        for(int val : numbers){
+            if(val<1||val>45){
+                throw new IllegalArgumentException(Messages.ERROR_RANGE_OVER);
+            }
+        }
+    }
 }
