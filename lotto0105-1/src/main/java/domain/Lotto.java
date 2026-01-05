@@ -18,6 +18,16 @@ public class Lotto {
         }
     }
 
+    public int matchCount(List<Integer> winNums){
+        int count = 0;
+        for(int val : numbers){
+            if(winNums.contains(val)){
+                count++;
+            }
+        }
+        return count;
+    }
+
     @Override
     public String toString(){
         return numbers.toString();
