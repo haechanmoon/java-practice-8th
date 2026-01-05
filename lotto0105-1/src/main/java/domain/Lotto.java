@@ -20,12 +20,16 @@ public class Lotto {
 
     public int matchCount(List<Integer> winNums){
         int count = 0;
-        for(int val : numbers){
+        for(int val : this.numbers){
             if(winNums.contains(val)){
                 count++;
             }
         }
         return count;
+    }
+
+    public boolean matchBonus(int bonus){
+        return this.numbers.contains(bonus);
     }
 
     @Override
