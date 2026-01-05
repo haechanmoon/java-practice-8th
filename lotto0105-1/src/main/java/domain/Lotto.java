@@ -2,11 +2,13 @@ package domain;
 
 import java.util.Collections;
 import java.util.List;
+import utils.Validator;
 
 public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
+        Validator.validateSize(numbers);
         validate(numbers);
         Collections.sort(numbers);
         this.numbers = numbers;
