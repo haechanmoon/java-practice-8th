@@ -20,8 +20,8 @@ version 1.1 Lotto 기능 추가
 - [ ] (검증) 1000원단위인지/0이아닌지
 - [ ] 개수만큼 로또를 생성
 
-- **RandomNumber**
-- [ ] 1~45 6개의 숫자 랜덤생성기
+- **RandomNumberGenerator**
+- [x] 1~45 6개의 숫자 랜덤생성기
 
 - **Statistics**
 - [ ] 랭크와 개수를 매칭하여 결과를 반환
