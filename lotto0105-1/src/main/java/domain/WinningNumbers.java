@@ -17,4 +17,14 @@ public class WinningNumbers {
         this.winNums = winNums;
         this.bonus = bonus;
     }
+
+    public int matchCount(Lotto lotto){
+        return lotto.matchCount(winNums);
+    }
+
+    public boolean matchBonus(Lotto lotto){
+        return lotto.matchBonus(bonus);
+    }
+
+
 }
