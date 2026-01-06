@@ -4,6 +4,7 @@ import utils.Validator;
 
 public class Car {
 
+    private static final int GO_STANDARD = 4;
     private final String name;
     private int position;
 
@@ -15,11 +16,24 @@ public class Car {
     }
 
     public void go(int num){
-        position++;
+        if(num>=GO_STANDARD) {
+            position++;
+        }
     }
 
     public String currentPosition(){
         return name+" : "+"-".repeat(Math.max(0,position));
+    }
+
+    public int isMaxPosition(int maxPosition){
+        return Math.max(position, maxPosition);
+    }
+
+    public String winner(int maxPosition){
+        if(maxPosition==position){
+            return name;
+        }
+        return "";
     }
 
 

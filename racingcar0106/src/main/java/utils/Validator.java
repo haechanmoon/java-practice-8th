@@ -15,7 +15,7 @@ public class Validator {
 
     public static void validateNameBlank(String input) {
         if(input.isBlank()){
-            throw new IllegalArgumentException(Messages.ERROR_NAME_LENGTH);
+            throw new IllegalArgumentException(Messages.ERROR_NAME_BLANK);
         }
     }
 

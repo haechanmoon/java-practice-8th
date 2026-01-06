@@ -13,5 +13,6 @@ public class Parser {
 
     public static int parseTurns(String input) {
         Validator.validateIsDigit(input);
+        return Integer.parseInt(input);
     }
 }
