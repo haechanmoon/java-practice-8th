@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.EnumMap;
+import java.util.Map;
 import utils.Messages;
 
 public enum Rank{
@@ -42,5 +44,13 @@ public enum Rank{
 
     public int getPrize() {
         return prize;
+    }
+
+    public static Map<Rank, Integer> mapInit(){
+        Map<Rank, Integer> initMap = new EnumMap<>(Rank.class);
+        for(Rank rank : Rank.values()){
+            initMap.put(rank,0);
+        }
+        return initMap;
     }
 }

@@ -7,6 +7,7 @@ import utils.Validator;
 
 public class LottoStore {
 
+    private static final int LOTTO_PRICE = 1000;
     private final NumberGenerator numberGenerator;
 
 
@@ -15,9 +16,9 @@ public class LottoStore {
     }
 
     public Lottos generateLotto(int money){
-        Validator.validateMoneyUnit(money);
+        int lottoCount = money/LOTTO_PRICE;
         List<Lotto> lottos = new ArrayList<>();
-        for(int i = 0 ; i<money/1000;i++){
+        for(int i = 0 ; i<lottoCount;i++){
             Lotto lotto = new Lotto(numberGenerator.generator());
             lottos.add(lotto);
         }

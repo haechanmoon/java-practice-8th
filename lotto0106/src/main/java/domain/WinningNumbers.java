@@ -34,22 +34,6 @@ public class WinningNumbers {
             init.put(rank, 0);
         }
         return init;
-    }
 
+    }
 }
-
-
-/*
-public Map<Rank, Integer> mapping(Lottos lottos){
-        Map<Rank, Integer> result = new EnumMap<>(Rank.class);
-        for(Rank rank : Rank.values()){
-            result.put(rank, 0);
-        }
-
-        for(Lotto lotto : lottos.getLottos()){
-            Rank rank = Rank.valueOf(matchCount(lotto),matchBonus(lotto));
-            result.put(rank,result.getOrDefault(rank,0)+1);
-        }
-        return result;
-    }
- */
