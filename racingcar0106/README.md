@@ -10,11 +10,11 @@
 - [x] 이름대로 차 생성
 
 - **Cars**
-- [ ] 자동차들의 전진
-- [ ] 자동차들의 위치 String 반환
+- [x] 자동차들의 전진
+- [x] 자동차들의 위치 List<String> 반환
 
 - **RandomNumberGenerator**
-- [ ] NumberGenerator를 상속받아 구현
+- [x] NumberGenerator를 상속받아 구현
  
 - **Winners**
 - [ ] 자동차들 중 가장 많이 간 자동차들 이름 반환 
