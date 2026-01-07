@@ -39,7 +39,7 @@ public class HunterGame {
         OutputView.printStartHeader();
         for(int i =0 ; i<size;i++){
             OutputView.printRoundHeader(i+1);
-            List<String> currentStatus = hunters.huntersGo(numberGenerator);
+            List<String> currentStatus = hunters.huntersGo(numberGenerator.generate());
             OutputView.printHuntersStatus(currentStatus);
         }
     }
