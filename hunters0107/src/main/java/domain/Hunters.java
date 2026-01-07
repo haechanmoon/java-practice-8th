@@ -12,11 +12,11 @@ public class Hunters {
         this.hunters = hunters;
     }
 
-    public List<String> huntersGo(int num){
+    public List<String> huntersGo(NumberGenerator numberGenerator){
         List<String> huntersState = new ArrayList<>();
         for(Hunter hunter : hunters){
             if(hunter.isAlive()) {
-                huntersState.add(hunter.go(num));
+                huntersState.add(hunter.go(numberGenerator.generate()));
             }
         }
         return huntersState;

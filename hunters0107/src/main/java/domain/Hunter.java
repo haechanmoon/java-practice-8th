@@ -21,6 +21,9 @@ public class Hunter {
     public String go(int random){
         Round round = Round.matchRound(random);
         this.stamina += round.getStaminaChange();
+        if(this.stamina<0){
+            this.stamina =0;
+        }
         if(random>=TREASURE_MIN_NUM&&random<=TREASURE_MAX_NUM){
             this.gold +=100;
         }
@@ -44,7 +47,7 @@ public class Hunter {
     }
 
     public String totalGold(){
-        return String.format("%s: (%dG))",name,gold);
+        return String.format("%s: (%dG)",name,gold);
     }
 
     public String getName() {
