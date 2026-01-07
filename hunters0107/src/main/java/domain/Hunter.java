@@ -4,6 +4,8 @@ import utils.Validator;
 
 public class Hunter {
 
+    private static final int TREASURE_MIN_NUM = 6;
+    private static final int TREASURE_MAX_NUM = 8;
     private final String name;
     private int stamina;
     private int gold;
@@ -16,9 +18,11 @@ public class Hunter {
     }
 
     public void go(int random){
-        //랜덤값을 받아서 그게 여기서 해야하나? if(0~2)이렇게?
-        //Enum에게 받아오는게 아닌가?
-        //그럼 Enum 얘는 뭐하는애이지? 그거부터 만들어볼까?
+        Round round = Round.matchRound(random);
+        this.stamina += round.getStaminaChange();
+        if(random>=TREASURE_MIN_NUM&&random<=TREASURE_MAX_NUM){
+            this.gold +=100;
+        }
     }
 
     public boolean isAlive(){
