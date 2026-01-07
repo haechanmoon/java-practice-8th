@@ -3,7 +3,7 @@
 ## 기능 구현 리스트
 
 - **RandomNumberGenerator**
-- [ ] 랜덤 번호를 생성
+- [x] 랜덤 번호를 생성
 
 - **Hunter**
 - [x] 한 라운드 전진
