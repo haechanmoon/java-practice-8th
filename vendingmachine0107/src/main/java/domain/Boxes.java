@@ -12,11 +12,6 @@ public class Boxes {
         this.boxes = boxes;
     }
 
-
-    public List<Box> getBoxes() {
-        return boxes;
-    }
-
     public Map<Rank, Integer> calculateRanks(){
         Map<Rank, Integer> result = new EnumMap<>(Rank.class);
         for(Rank rank : Rank.values()){
@@ -26,6 +21,8 @@ public class Boxes {
             Rank rank = box.calculateRank();
             result.put(box.calculateRank(),result.getOrDefault(rank,0)+1);
         }
+
         return result;
     }
+
 }
