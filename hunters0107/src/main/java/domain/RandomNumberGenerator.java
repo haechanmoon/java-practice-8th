@@ -11,20 +11,4 @@ public class RandomNumberGenerator implements NumberGenerator{
         return Randoms.pickNumberInRange(START,END);
     }
 
-    public int meetPitfall(){
-        return 0;
-    }
-
-    public int meetMonster(){
-        return 3;
-    }
-
-    public int meetTreasure(){
-        return 6;
-    }
-
-    public int meetRest(){
-        return 9;
-    }
-
 }

@@ -13,6 +13,7 @@ public class Hunter {
 
     public Hunter(String name) {
         Validator.validateNameLength(name);
+        Validator.validateNameBlank(name);
         this.name = name;
         this.stamina = 100;
         this.gold = 0;
