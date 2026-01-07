@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import utils.Validator;
 
 public class BoxStore {
 
@@ -9,6 +10,7 @@ public class BoxStore {
     public final int money;
 
     public BoxStore(int money) {
+        Validator.validateUnit(money);
         this.money = money;
     }
 
