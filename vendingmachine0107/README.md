@@ -22,7 +22,7 @@ version 1.1 : Map위치 Boxes로 변경
 - [x] 1~100 중 랜덤값을 반환
 
 - **Statistics**
-- [ ] 수익률 반환
+- [x] 수익률 반환
 
 - **Parser**
 - [ ] 금액을 int형으로 반환

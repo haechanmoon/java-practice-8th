@@ -1,0 +1,22 @@
+package domain;
+
+import java.util.EnumMap;
+import java.util.Map;
+
+public class Statistics {
+
+    private final Map<Rank, Integer> result;
+
+
+    public Statistics(Map<Rank, Integer> result) {
+        this.result = result;
+    }
+
+    public double calculateRate(int money){
+        double total = 0.0;
+        for(Rank rank : Rank.values()){
+            total+=rank.getPrize()*result.getOrDefault(rank,0);
+        }
+        return total/money;
+    }
+}

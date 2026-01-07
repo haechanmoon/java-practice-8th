@@ -26,4 +26,12 @@ public enum Rank {
         }
         return MISS;
     }
+
+    public int getPrize() {
+        return prize;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
