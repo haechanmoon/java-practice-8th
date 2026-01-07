@@ -15,8 +15,20 @@ public class Hunters {
     public List<String> huntersGo(int num){
         List<String> huntersState = new ArrayList<>();
         for(Hunter hunter : hunters){
-            huntersState.add(hunter.go(num));
+            if(hunter.isAlive()) {
+                huntersState.add(hunter.go(num));
+            }
         }
         return huntersState;
+    }
+
+    public int huntersTotalGold(){
+        int total = 0 ;
+        for(Hunter hunter : hunters){
+            if(hunter.isAlive()){
+                total+=hunter.getGold();
+            }
+        }
+        return total;
     }
 }
