@@ -18,12 +18,12 @@ public enum Rank {
         this.name = name;
     }
 
-    public Rank matchRank(int num){
+    public static Rank matchRank(int num){
         for(Rank rank : Rank.values()){
-           if(num<matchNum){
+           if(num<=rank.matchNum){
                return rank;
            }
         }
-        return FIRST;
+        return MISS;
     }
 }
