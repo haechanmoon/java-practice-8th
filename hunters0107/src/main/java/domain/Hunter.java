@@ -43,5 +43,13 @@ public class Hunter {
         return this.gold;
     }
 
+    public String totalGold(){
+        return String.format("%s: (%dG))",name,gold);
+    }
+
+    public String getName() {
+        return name;
+    }
+
     //현재 자신의 구역에서 만난 값 추출
 }

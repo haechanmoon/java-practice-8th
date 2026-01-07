@@ -31,4 +31,24 @@ public class Hunters {
         }
         return total;
     }
+
+    public List<String> hunterIndividualGold(){
+        List<String> individualGold = new ArrayList<>();
+        for(Hunter hunter : hunters){
+            if(hunter.isAlive()){
+                individualGold.add(hunter.totalGold());
+            }
+        }
+        return individualGold;
+    }
+
+    public List<String> deadHunters(){
+        List<String> dead = new ArrayList<>();
+        for(Hunter hunter:hunters){
+            if(!hunter.isAlive()){
+                dead.add(hunter.getName());
+            }
+        }
+        return dead;
+    }
 }
