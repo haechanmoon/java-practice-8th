@@ -20,3 +20,6 @@
 
 - **Round(`enum`)**
 - [x] 자신의 라운드 반환
+
+- **HunterFactory**
+- [ ] 헌터들을 생성
