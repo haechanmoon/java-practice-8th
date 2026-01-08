@@ -55,5 +55,16 @@ class WinningNumbersTest {
         assertThat(count).isEqualTo(5);
     }
 
+    @Test
+    @DisplayName("로또 번호와 보너스 번호가 잘 매칭되는지")
+    void 로또번호와_보너스번호_매칭(){
+        Lotto lotto = new Lotto(List.of(1,2,3,4,5,6));
+        WinningNumbers winningNumbers = new WinningNumbers(List.of(1,2,3,4,5,7),6);
+
+        boolean bonus = winningNumbers.matchBonus(lotto);
+
+        assertThat(bonus).isEqualTo(true);
+    }
+
 
 }
