@@ -18,7 +18,7 @@ v1.0 초안 작성
 - [ ] lottos와 비교하여 Map<Rank,Integer>생성
 
 - **RandomNumberGenerator**
-- [ ] 1~45의 중복되지 않는 숫자 6개 반환
+- [x] 1~45의 중복되지 않는 숫자 6개 반환
 
 - **LottoStore**
 - [ ] 받은 액수만큼 로또 생성
