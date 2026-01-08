@@ -27,6 +27,10 @@ public class Lotto {
         return count;
     }
 
+    public boolean matchBonus(int bonus){
+        return this.numbers.contains(bonus);
+    }
+
 
     @Override
     public String toString(){
