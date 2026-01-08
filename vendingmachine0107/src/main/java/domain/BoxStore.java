@@ -6,7 +6,7 @@ import utils.Validator;
 
 public class BoxStore {
 
-    private static final int BOX_PRICE = 10000;
+    private static final int BOX_PRICE = 1000;
     public final int money;
 
     public BoxStore(int money) {

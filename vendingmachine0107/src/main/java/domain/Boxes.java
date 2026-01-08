@@ -19,7 +19,7 @@ public class Boxes {
         }
         for(Box box : boxes){
             Rank rank = box.calculateRank();
-            result.put(box.calculateRank(),result.getOrDefault(rank,0)+1);
+            result.put(rank,result.getOrDefault(rank,0)+1);
         }
 
         return result;
