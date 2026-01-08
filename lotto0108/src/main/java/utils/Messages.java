@@ -15,7 +15,7 @@ public class Messages {
             ;
     public static final String REQUEST_MONEY = "구입금액을 입력해 주세요.";
     public static final String REQUEST_WINNING_NUMBERS = "당첨 번호를 입력해 주세요.";
-    public static final String PRINT_LOTTOS_HEADER = "%n%d개를 구매했습니다.";
+    public static final String PRINT_LOTTOS_HEADER = "%n%d개를 구매했습니다.%n";
     public static final String REQUEST_BONUS_NUMBER = "\n보너스 번호를 입력해 주세요.";
     public static final String PRINT_STATISTICS_HEADER = "\n당첨통계\n---";
     public static final String PRINT_SECOND_STATISTICS = "%d개 일치, 보너스 볼 일치 (%,d원) - %d개";

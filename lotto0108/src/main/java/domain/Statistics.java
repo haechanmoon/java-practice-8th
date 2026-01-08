@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class Statistics {
 
+    private static final int PERCENT = 100;
     private final Map<Rank, Integer> result;
 
     public Statistics(Map<Rank, Integer> result) {
@@ -15,6 +16,6 @@ public class Statistics {
         for(Rank rank : Rank.values()){
             total+= result.getOrDefault(rank,0) * rank.getPrize();
         }
-        return total/money *100;
+        return total/money * PERCENT;
     }
 }
