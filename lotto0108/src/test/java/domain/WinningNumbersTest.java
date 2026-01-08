@@ -32,5 +32,16 @@ class WinningNumbersTest {
                 .hasMessageContaining(Messages.ERROR_NUMBER_RANGE);
     }
 
+    @Test
+    @DisplayName("(예외) 보너스 번호와 당첨번호가 중복되었을 때")
+    void 당첨번호와_보너스번호_중복(){
+        List<Integer> winNums = List.of(1,2,3,4,5,6);
+        int bonus = 6;
+
+        assertThatThrownBy(()-> new WinningNumbers(winNums, bonus))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_BONUS_ALREADY_IN);
+    }
+
 
 }
