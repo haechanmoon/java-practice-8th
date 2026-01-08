@@ -15,7 +15,7 @@ v1.0 초안 작성
 - **Lottos**
 - [x] 로또들의 번호를 반환
 - [x] Map<Rank,Integer> 초기 생성
-- [ ] lottos와 비교하여 Map<Rank,Integer>생성
+- [x] winningNumbers와 비교하여 Map<Rank,Integer>생성
 
 - **RandomNumberGenerator**
 - [x] 1~45의 중복되지 않는 숫자 6개 반환

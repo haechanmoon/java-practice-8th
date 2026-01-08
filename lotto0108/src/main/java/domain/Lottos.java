@@ -29,4 +29,15 @@ public class Lottos {
         return initMap;
     }
 
+    public Map<Rank, Integer> calculateResult(WinningNumbers winningNumbers){
+        Map<Rank, Integer> result = initMap();
+        for(Lotto lotto : lottos){
+            int count = winningNumbers.matchCount(lotto);
+            boolean bonus = winningNumbers.matchBonus(lotto);
+            Rank rank = Rank.matchRank(count, bonus);
+            result.put(rank, result.getOrDefault(rank, 0)+1);
+        }
+        return result;
+    }
+
 }
