@@ -17,6 +17,17 @@ public class Lotto {
         this.numbers = sortNumbers;
     }
 
+    public int matchNumbers(List<Integer> numbers){
+        int count =0;
+        for(int number : this.numbers){
+            if (numbers.contains(number)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
     @Override
     public String toString(){
         return numbers.toString();
