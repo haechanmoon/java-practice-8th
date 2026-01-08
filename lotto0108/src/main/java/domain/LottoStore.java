@@ -17,7 +17,8 @@ public class LottoStore {
     public Lottos generateLottos(NumberGenerator numberGenerator){
         List<Lotto> lottos = new ArrayList<>();
         for(int i=0;i<money/LOTTO_PRICE ;i++){
-
+            lottos.add(new Lotto(numberGenerator.generate()));
         }
+        return new Lottos(lottos);
     }
 }
