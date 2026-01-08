@@ -41,4 +41,15 @@ class LottoTest {
 
         assertThat(count).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("자신의 번호와 보너스번호가 잘 매칭 되는지")
+    void 로또번호와_보너스번호_매칭여부(){
+        Lotto lotto = new Lotto(List.of(1,2,3,4,5,6));
+        int bonus = 3;
+
+        boolean hasBonus = lotto.matchBonus(bonus);
+
+        assertThat(hasBonus).isEqualTo(true);
+    }
 }
