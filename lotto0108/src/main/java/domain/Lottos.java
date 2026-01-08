@@ -1,7 +1,9 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.EnumMap;
 import java.util.List;
+import java.util.Map;
 
 public class Lottos {
 
@@ -18,4 +20,13 @@ public class Lottos {
         }
         return numbers;
     }
+
+    public Map<Rank, Integer> initMap(){
+        Map<Rank, Integer> initMap = new EnumMap<>(Rank.class);
+        for(Rank rank : Rank.values()){
+            initMap.put(rank,0);
+        }
+        return initMap;
+    }
+
 }

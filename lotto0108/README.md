@@ -14,7 +14,7 @@ v1.0 초안 작성
 
 - **Lottos**
 - [x] 로또들의 번호를 반환
-- [ ] Map<Rank,Integer> 초기 생성
+- [x] Map<Rank,Integer> 초기 생성
 - [ ] lottos와 비교하여 Map<Rank,Integer>생성
 
 - **RandomNumberGenerator**
