@@ -21,7 +21,7 @@ public class Lottos {
         return numbers;
     }
 
-    public Map<Rank, Integer> initMap(){
+    private Map<Rank, Integer> initMap(){
         Map<Rank, Integer> initMap = new EnumMap<>(Rank.class);
         for(Rank rank : Rank.values()){
             initMap.put(rank,0);

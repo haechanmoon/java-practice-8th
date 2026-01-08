@@ -10,7 +10,6 @@ public class LottoStore {
     private final int money;
 
     public LottoStore(int money) {
-        Validator.validateIsLottoUnit(money);
         this.money = money;
     }
 
