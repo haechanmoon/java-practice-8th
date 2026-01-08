@@ -12,6 +12,7 @@ public class WinningNumbers {
         Validator.validateNumberRange(winNums);
         Validator.validateNumberDuplicated(winNums);
         Validator.validateNumberSize(winNums);
+        Validator.validateBonusDuplicated(winNums, bonus);
         this.winNums = winNums;
         this.bonus = bonus;
     }

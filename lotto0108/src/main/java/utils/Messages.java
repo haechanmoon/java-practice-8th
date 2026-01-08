@@ -5,4 +5,5 @@ public class Messages {
     public static final String ERROR_NUMBER_DUPLICATED = "숫자가 중복되었습니다.";
     public static final String ERROR_NUMBER_RANGE = "번호의 범위를 넘어섰습니다.";
     public static final String ERROR_IS_NOT_LOTTO_UNIT = "구입금액을 확인하시기 바랍니다.";
+    public static final String ERROR_BONUS_ALREADY_IN = "보너스 번호가 이미 당첨 번호에 포함되었습니다.";
 }

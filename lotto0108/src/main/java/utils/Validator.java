@@ -32,4 +32,10 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_LOTTO_UNIT);
         }
     }
+
+    public static void validateBonusDuplicated(List<Integer> winNums, int bonus) {
+        if(winNums.contains(bonus)){
+            throw new IllegalArgumentException(Messages.ERROR_BONUS_ALREADY_IN);
+        }
+    }
 }
