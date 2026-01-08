@@ -13,7 +13,7 @@ v1.0 초안 작성
 - [x] 자신의 번호와 보너스번호 매칭 여부 반환
 
 - **Lottos**
-- [ ] 로또들의 번호를 반환
+- [x] 로또들의 번호를 반환
 - [ ] Map<Rank,Integer> 초기 생성
 - [ ] lottos와 비교하여 Map<Rank,Integer>생성
 
