@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import utils.Validator;
 
 public class WinningNumbers {
 
@@ -8,6 +9,7 @@ public class WinningNumbers {
     private final int bonus;
 
     public WinningNumbers(List<Integer> winNums, int bonus) {
+        Validator.validateNumberRange(winNums);
         this.winNums = winNums;
         this.bonus = bonus;
     }
