@@ -26,4 +26,10 @@ public class Validator {
             }
         }
     }
+
+    public static void validateIsLottoUnit(int money) {
+        if((money%1000!=0)||money ==0){
+            throw new IllegalArgumentException(Messages.ERROR_IS_NOT_LOTTO_UNIT);
+        }
+    }
 }
