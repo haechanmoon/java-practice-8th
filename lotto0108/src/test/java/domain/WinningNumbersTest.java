@@ -1,5 +1,6 @@
 package domain;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -41,6 +42,17 @@ class WinningNumbersTest {
         assertThatThrownBy(()-> new WinningNumbers(winNums, bonus))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_BONUS_ALREADY_IN);
+    }
+
+    @Test
+    @DisplayName("로또 번호와 당첨번호가 잘 매칭되는지")
+    void 로또번호와_당첨번호_매칭(){
+        Lotto lotto = new Lotto(List.of(1,2,3,4,5,6));
+        WinningNumbers winningNumbers = new WinningNumbers(List.of(1,2,3,4,5,7),6);
+
+        int count = winningNumbers.matchCount(lotto);
+
+        assertThat(count).isEqualTo(5);
     }
 
 
