@@ -1,5 +1,7 @@
 package controller;
 
+import view.OutputView;
+
 public class CalculatorGame {
     public void start() {
         //1. 문자열을 입력받는다.
@@ -9,6 +11,6 @@ public class CalculatorGame {
     }
 
     private String readInput() {
-        OutputView.
+        OutputView.requestInput();
     }
 }
